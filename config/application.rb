@@ -34,5 +34,12 @@ module WithOke
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.generators do |g|
+      g.assets false          # CSS, JavaScriptファイルを生成しない
+      g.skip_routes true      # ルーティングを生成しない
+      g.test_framework false  # testファイル生成をしない
+      g.helper false          # helperを生成しない
+    end
   end
 end
