@@ -35,3 +35,7 @@ vendor/bundle
 
 # Ignore the /node_modules directory
 node_modules/
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
