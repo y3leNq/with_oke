@@ -7,10 +7,12 @@ ja:
   users:
     new:
       title: 'ユーザー登録'
+      have_account: 'アカウントを持っている方'
   user_sessions:
     new:
       title: 'ログイン'
       forgot_password: 'パスワードを忘れた方'
+      not_have_account: 'アカウントを持っていない方'
   password_resets:
     new:
       title: 'パスワードリセット'
