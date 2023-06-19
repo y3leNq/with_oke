@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <h2 class="text-center my-5"><%= t('.title') %></h2>
+      <p class="text-center mb-5">新しいパスワードを入力してください。</p>
+      <%= form_with model: @user, url: password_reset_path(@token), local: true do |f| %>
+        <div class="input-wrapper mb-4">
+          <i class="fa-solid fa-unlock-keyhole input-icon"></i>
+          <%= f.label :password, class: 'form-label' %>
+          <%= f.password_field :password, class: 'form-control rounded-pill form-control-with-icon' %>
+        </div>
+        <div class="input-wrapper mb-4">
+          <i class="fa-solid fa-unlock-keyhole input-icon"></i>
+          <%= f.label :password_confirmation, class: 'form-label' %>
+          <%= f.password_field :password_confirmation, class: 'form-control rounded-pill form-control-with-icon' %>
+        </div>
+        <div class="text-center pt-3">
+          <%= f.submit t('defaults.decision'), class: 'btn btn-primary actions' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
