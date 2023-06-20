@@ -13,8 +13,18 @@ ja:
       title: 'ログイン'
       forgot_password: 'パスワードを忘れた方'
       not_have_account: 'アカウントを持っていない方'
+    create:
+      success: 'ログインしました'
+      fail: 'メールアドレスまたはパスワードが間違っています'
+    destroy:
+      success: 'ログアウトしました'
   password_resets:
     new:
       title: 'パスワードリセット'
     edit:
       title: 'パスワード再設定'
+      fail: 'パスワードリセットの有効期限が切れています'
+    create:
+      success: '入力されたメールアドレス宛にパスワード再設定のURLが送られました'
+    update:
+      success: 'パスワードの変更に成功しました'
