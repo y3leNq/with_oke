@@ -28,3 +28,6 @@ ja:
       success: '入力されたメールアドレス宛にパスワード再設定のURLが送られました'
     update:
       success: 'パスワードの変更に成功しました'
+  songs:
+    search:
+      placeholder: '曲名かアーティスト名で検索できます'
