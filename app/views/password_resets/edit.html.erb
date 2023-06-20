@@ -3,7 +3,8 @@
     <div class="col-6 offset-3">
       <h2 class="text-center my-5"><%= t('.title') %></h2>
       <p class="text-center mb-5">新しいパスワードを入力してください。</p>
-      <%= form_with model: @user, url: password_reset_path(@token), local: true do |f| %>
+      <%= form_with model: @user, url: password_reset_path(@token) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
         <div class="input-wrapper mb-4">
           <i class="fa-solid fa-unlock-keyhole input-icon"></i>
           <%= f.label :password, class: 'form-label' %>
