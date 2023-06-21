@@ -12,6 +12,32 @@ body {
   width: 17%;
 }
 
+.navbar-icon {
+  width: 60px;
+  height: auto;
+  margin-right: 0.7rem;
+  margin-left: 2rem
+}
+
+.header-color {
+  background-color: rgba(254, 255, 184, 0.4);
+}
+
+.header-title {
+  font-family: 'Cherry Bomb One', cursive;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.8);
+  color: #faff04;
+}
+
+.header-button {
+  margin-left: auto;
+  margin-right: 20px
+}
+
+.header-name {
+  margin-right: 2rem;
+}
+
 .form-control-with-icon {
   padding-left: 50px;
 }
@@ -31,5 +57,3 @@ body {
   left: 20px;
   top: calc(50% - 0.5em);
 }
-
-

@@ -1,0 +1,11 @@
+<nav class="navbar navbar-light header-color">
+  <div class="container-fluid d-flex justify-content-start align-items-center">
+    <%= image_tag "icon.png", class: "navbar-icon" %>
+    <h1 class="mt-2 header-title"><%= t 'defaults.title' %></h1>
+    <div class="header-button">
+      <%= link_to (t 'defaults.sign_up'), signup_path, class: "btn btn-outline-success" %>
+      <%= link_to (t 'defaults.login'), login_path, class: "btn btn-outline-success" %>
+    </div>
+  </div>
+</nav>
+
