@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2 my-5">
+      <%= form_with url: songs_path, method: :get do |f| %>
+        <div class="input-wrapper mb-4">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <%= f.search_field :search, placeholder: (t '.placeholder'), class: 'form-control form-control-with-icon' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

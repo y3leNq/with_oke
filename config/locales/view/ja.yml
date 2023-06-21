@@ -1,7 +1,9 @@
 ja:
   defaults:
-    sign_up: '登録'
+    title: 'うぃずおけ。'
+    sign_up: '新規登録'
     login: 'ログイン'
+    logout: 'ログアウト'
     submit: '送る'
     decision: '決定'
   users:
@@ -28,3 +30,6 @@ ja:
       success: '入力されたメールアドレス宛にパスワード再設定のURLが送られました'
     update:
       success: 'パスワードの変更に成功しました'
+  songs:
+    search:
+      placeholder: '曲名かアーティスト名で検索できます'
