@@ -1,11 +1,15 @@
-<nav class="navbar navbar-light header-color">
-  <div class="container-fluid d-flex justify-content-start align-items-center">
+<nav class="navbar navbar-expand-lg header-color">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
     <%= image_tag "icon.png", class: "navbar-icon" %>
     <h1 class="mt-2 header-title"><%= t 'defaults.title' %></h1>
-    <div class="header-button">
-      <%= link_to (t 'defaults.sign_up'), signup_path, class: "btn btn-outline-success" %>
-      <%= link_to (t 'defaults.login'), login_path, class: "btn btn-outline-success" %>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="header-button">
+        <%= link_to (t 'defaults.sign_up'), signup_path, class: "btn btn-outline-success" %>
+        <%= link_to (t 'defaults.login'), login_path, class: "btn btn-outline-success" %>
+      </div>
     </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   </div>
 </nav>
-
