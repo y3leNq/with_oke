@@ -42,6 +42,7 @@ ja:
     index:
       title: 'プレイリスト一覧'
       no_result: 'プレイリストがありません。'
+      btn: '新規作成'
     new:
       title: 'プレイリスト作成'
       description: '新しく作成するプレイリストの名前を決めてください。'
@@ -50,3 +51,5 @@ ja:
       success: 'プレイリストを作成しました。'
     destroy:
       success: 'プレイリストを削除しました。'
+    edit:
+      description: '新しいプレイリストの名前を決めてください。'
