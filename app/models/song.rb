@@ -3,8 +3,8 @@
 # Table name: songs
 #
 #  id         :bigint           not null, primary key
-#  artist     :string
-#  title      :string
+#  artist     :string           not null
+#  title      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  itunes_id  :string
