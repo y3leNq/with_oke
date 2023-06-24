@@ -7,6 +7,8 @@ ja:
     submit: '送る'
     decision: '決定'
     placeholder: '曲名かアーティスト名で検索できます'
+    logout_message: 'ログアウトしますか？'
+    delete_message: '削除しますか？'
   users:
     new:
       title: 'ユーザー登録'
@@ -44,3 +46,7 @@ ja:
       title: 'プレイリスト作成'
       description: '新しく作成するプレイリストの名前を決めてください。'
       btn: '作成する'
+    create:
+      success: 'プレイリストを作成しました。'
+    destroy:
+      success: 'プレイリストを削除しました。'

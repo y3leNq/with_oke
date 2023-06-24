@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <h2 class="text-center my-5"><%= t('.title') %></h2>
+      <% if @playlists.present? %>
+        <%= render @playlists %>
+      <% else %>
+        <p class="text-center pt-5">
+          <%= t('.no_result') %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>

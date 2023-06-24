@@ -1,0 +1,10 @@
+<div class="list-group">
+  <div class="list-group-item list-group-item-action rounded mt-3 py-4 d-flex justify-content-between">
+    <%= link_to playlist_path(playlist), class: "playlist_title fs-4" do %>
+      <%= playlist.name %>
+    <% end %>
+    <%= link_to playlist_path(playlist), data: { turbo_method: :delete, turbo_confirm: (t 'defaults.delete_message') } do %>
+      <i class="fa-solid fa-trash-can"></i>
+    <% end %>
+  </div>
+</div>

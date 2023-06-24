@@ -2,7 +2,7 @@
   <div class="container-fluid d-flex justify-content-start align-items-center">
     <%= image_tag "icon.png", class: "navbar-icon" %>
     <div class="header-button">
-      <%= link_to (t 'defaults.logout'), logout_path, class: "btn btn-outline-success", data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか？" } %>
+      <%= link_to (t 'defaults.logout'), logout_path, class: "btn btn-outline-success", data: { turbo_method: :delete, turbo_confirm: (t 'defaults.logout_message') } %>
     </div>
   </div>
 </nav>
