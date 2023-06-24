@@ -18,19 +18,29 @@ ja:
       not_have_account: 'アカウントを持っていない方'
     create:
       success: 'ログインしました'
-      fail: 'メールアドレスまたはパスワードが間違っています'
+      fail: 'メールアドレスまたはパスワードが間違っています。'
     destroy:
       success: 'ログアウトしました'
   password_resets:
     new:
       title: 'パスワードリセット'
+      description: 'メールアドレス宛にパスワードリセットのURLが送られます。'
     edit:
+      description: '新しいパスワードを入力してください。'
       title: 'パスワード再設定'
-      fail: 'パスワードリセットの有効期限が切れています'
+      fail: 'パスワードリセットの有効期限が切れています。'
     create:
       success: '入力されたメールアドレス宛にパスワード再設定のURLが送られました'
     update:
-      success: 'パスワードの変更に成功しました'
+      success: 'パスワードの変更に成功しました。'
   songs:
-    index:
+    search:
       no_result: '検索結果が見つかりませんでした。'
+  playlists:
+    index:
+      title: 'プレイリスト一覧'
+      no_result: 'プレイリストがありません。'
+    new:
+      title: 'プレイリスト作成'
+      description: '新しく作成するプレイリストの名前を決めてください。'
+      btn: '作成する'

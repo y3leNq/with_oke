@@ -2,9 +2,12 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      playlist: 'プレイリスト'
     attributes:
       user:
         name: 'ユーザーネーム'
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード(確認)'
+      playlist:
+        name: 'プレイリスト名'
