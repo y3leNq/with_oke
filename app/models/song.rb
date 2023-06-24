@@ -13,6 +13,6 @@ class Song < ApplicationRecord
   require_relative '../../lib/itunes_search_api'
 
   def self.search(query)
-    ITunesSearchAPI.search(term: query, media: "music", country: 'jp')
+    ITunesSearchAPI.search(term: query, media: "music", country: 'jp', limit: 2)
   end
 end
