@@ -2,6 +2,13 @@
   <div class="row">
     <div class="col-8 offset-2 my-5">
       <%= render 'search_form' %>
+      <% if @songs.present? %>
+          <%= render partial: 'song', collection: @songs %>
+      <% else %>
+        <h5 class="text-center pt-5">
+          <%= t '.no_result' %>
+        <h5>
+      <% end %>
     </div>
   </div>
 </div>
