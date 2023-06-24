@@ -1,0 +1,13 @@
+<%= turbo_frame_tag playlist do %>
+  <div class="list-group">
+    <div class="list-group-item rounded mt-3 py-4 d-flex justify-content-between">
+      <%= link_to playlist_path(playlist), class: "playlist_title fs-4 text-decoration-none" do %>
+        <%= playlist.name %>
+      <% end %>
+      <div>
+        <%= link_to 'Edit', edit_playlist_path(playlist), class: "btn btn-success" %>
+        <%= link_to 'Destroy', playlist_path(playlist), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: (t 'defaults.delete_message') } %>
+      </div>
+    </div>
+  </div>
+<% end %>
