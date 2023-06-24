@@ -2,7 +2,7 @@ class PlaylistsController < ApplicationController
   before_action :set_playlist, only: %i[edit update destroy]
 
   def index
-    @playlists = Playlist.all
+    @playlists = Playlist.all.order(created_at: :desc)
   end
 
   def new
@@ -12,7 +12,7 @@ class PlaylistsController < ApplicationController
   def create
     @playlist = current_user.playlists.build(playlist_params)
     if @playlist.save
-      redirect_to playlists_path, info: (t '.success')
+      flash.now[:info] = (t '.success')
     else
       render :new, status: :unprocessable_entity
     end
@@ -22,7 +22,7 @@ class PlaylistsController < ApplicationController
 
   def update
     if @playlist.update(playlist_params)
-      redirect_to playlists_path
+      flash.now[:info] = (t '.success')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class PlaylistsController < ApplicationController
 
   def destroy
     @playlist.destroy
-    redirect_to playlists_path, info: (t '.success')
+    flash.now[:info] = (t '.success')
   end
 
   private

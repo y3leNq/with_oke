@@ -53,3 +53,5 @@ ja:
       success: 'プレイリストを削除しました。'
     edit:
       description: '新しいプレイリストの名前を決めてください。'
+    update:
+      success: 'プレイリストを更新しました。'
