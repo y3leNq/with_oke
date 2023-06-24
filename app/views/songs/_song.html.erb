@@ -1,0 +1,14 @@
+<ol class="list-group mt-2">
+  <li class="list-group-item align-items-start">
+    <%= image_tag song["artworkUrl100"], class: "float-start me-5" %>
+    <div>
+      <h4 class="mt-3">
+        <%= song["trackName"] %>
+      </h4>
+      <p>
+        <%= song["artistName"] %>
+      </p>
+      <audio controls src="<%= song["previewUrl"] %>"></audio>
+    </div>
+  </li>
+</ol>

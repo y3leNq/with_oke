@@ -6,6 +6,7 @@ ja:
     logout: 'ログアウト'
     submit: '送る'
     decision: '決定'
+    placeholder: '曲名かアーティスト名で検索できます'
   users:
     new:
       title: 'ユーザー登録'
@@ -31,5 +32,5 @@ ja:
     update:
       success: 'パスワードの変更に成功しました'
   songs:
-    search:
-      placeholder: '曲名かアーティスト名で検索できます'
+    index:
+      no_result: '検索結果が見つかりませんでした。'
