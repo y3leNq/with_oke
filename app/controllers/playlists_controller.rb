@@ -1,5 +1,5 @@
 class PlaylistsController < ApplicationController
-  before_action :set_playlist, only: %i[edit update destroy]
+  before_action :set_playlist, only: %i[edit update destroy show]
 
   def index
     @playlists = Playlist.all.order(created_at: :desc)
@@ -8,6 +8,8 @@ class PlaylistsController < ApplicationController
   def new
     @playlist = Playlist.new
   end
+
+  def show; end
 
   def create
     @playlist = current_user.playlists.build(playlist_params)
