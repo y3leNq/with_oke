@@ -10,6 +10,8 @@ ja:
     edit: '編集'
     destroy: '削除'
     cancel: 'キャンセル'
+    search: '楽曲検索'
+    settings: '設定'
     placeholder: '曲名かアーティスト名で検索できます'
     logout_message: 'ログアウトしますか？'
     delete_message: '削除しますか？'
