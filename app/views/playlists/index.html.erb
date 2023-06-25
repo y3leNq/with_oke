@@ -9,16 +9,15 @@
 
       <%= turbo_frame_tag Playlist.new %>
 
-      <% if @playlists.present? %>
-        <div id="playlists">
+      <div id="playlists">
+        <% if @playlists.present? %>
           <%= render @playlists %>
-        </div>
-      <% else %>
-        <p class="text-center pt-5">
-          <%= t('.no_result') %>
-        </p>
-      <% end %>
-
+        <% else %>
+          <p class="text-center pt-5" id="no_result">
+            <%= t('.no_result') %>
+          </p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
