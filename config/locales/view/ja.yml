@@ -18,6 +18,7 @@ ja:
     select_playlist: 'プレイリストを選択してください'
     require_login: 'ログインしてください。'
     select_playlist: 'プレイリストを選択してください'
+    require_login: 'ログインしてください。'
   users:
     new:
       title: 'ユーザー登録'
