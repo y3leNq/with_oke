@@ -2,6 +2,9 @@
 
 body {
   background-color: #fffefa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .how_to_list li {
@@ -13,21 +16,7 @@ body {
 }
 
 .header-color {
-  background-color: rgba(254, 255, 184, 0.4);
-}
-
-.nav-border {
-  border-width: 1px;
-  background-color: rgba(247, 214, 69, 0.464);
-  border-color: rgb(255, 213, 97);
-}
-
-.navbar-toggler:focus {
-  box-shadow: none;
-}
-
-.navbar-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(254,255,255,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  background-color: rgb(249, 249, 216);
 }
 
 .form-control-with-icon {
@@ -52,4 +41,8 @@ body {
 
 .playlist_title {
   margin-left: 2rem;
+}
+
+.bg-custom {
+  background-color: rgb(249, 249, 216);
 }
