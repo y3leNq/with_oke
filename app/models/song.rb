@@ -12,6 +12,9 @@
 class Song < ApplicationRecord
   require_relative '../../lib/itunes_search_api'
 
+  has_many :playlist_songs, dependent: :destroy
+  has_many :playlists, through: :playlist_songs
+
   validates :artist, :title, presence: true
 
   def self.search(query)
