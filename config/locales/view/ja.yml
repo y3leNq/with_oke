@@ -15,6 +15,9 @@ ja:
     placeholder: '曲名かアーティスト名で検索できます'
     logout_message: 'ログアウトしますか？'
     delete_message: '削除しますか？'
+    select_playlist: 'プレイリストを選択してください'
+    require_login: 'ログインしてください。'
+    select_playlist: 'プレイリストを選択してください'
     require_login: 'ログインしてください。'
   users:
     new:
@@ -62,3 +65,11 @@ ja:
       description: '新しいプレイリストの名前を決めてください。'
     update:
       success: 'プレイリストを更新しました。'
+  songs:
+    new:
+      placeholder_artist: '歌手名を入力してください'
+      placeholder_title: '曲名を入力してください'
+      not_have_playlist: 'プレイリストの作成はこちら'
+    create:
+      success: '%{item}に追加しました。'
+      success: '%{item}に追加しました。'

@@ -3,6 +3,7 @@ ja:
     models:
       user: 'ユーザー'
       playlist: 'プレイリスト'
+      song: '楽曲'
     attributes:
       user:
         name: 'ユーザーネーム'
@@ -11,3 +12,6 @@ ja:
         password_confirmation: 'パスワード(確認)'
       playlist:
         name: 'プレイリスト名'
+      song:
+        title: 'タイトル'
+        artist: 'アーティスト'
