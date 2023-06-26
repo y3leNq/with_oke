@@ -9,6 +9,7 @@ ja:
     placeholder: '曲名かアーティスト名で検索できます'
     logout_message: 'ログアウトしますか？'
     delete_message: '削除しますか？'
+    require_login: 'ログインしてください。'
   users:
     new:
       title: 'ユーザー登録'
