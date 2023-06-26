@@ -55,3 +55,7 @@ ja:
       description: '新しいプレイリストの名前を決めてください。'
     update:
       success: 'プレイリストを更新しました。'
+  songs:
+    new:
+      placeholder_artist: '歌手名を入力してください'
+      placeholder_title: '曲名を入力してください'

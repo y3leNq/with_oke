@@ -12,6 +12,8 @@
 class Song < ApplicationRecord
   require_relative '../../lib/itunes_search_api'
 
+  validates :artist, :title, presence: true
+
   def self.search(query)
     ITunesSearchAPI.search(term: query, media: "music", country: 'jp', limit: 2)
   end
