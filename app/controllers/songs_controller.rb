@@ -6,10 +6,17 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new(song_params)
-    if @song.save
-      redirect_to songs_path
-    else
+    @song = Song.new(song_params.except(:playlist_id))
+    @playlist = Playlist.find(params[:song][:playlist_id])
+
+    begin
+      ActiveRecord::Base.transaction do
+        @song.save!
+        @playlist.songs << @song
+      end
+      flash[:info] = t('.success', item: @playlist.name)
+      redirect_to @playlist
+    rescue ActiveRecord::RecordInvalid
       render :new, status: :unprocessable_entity
     end
   end
@@ -25,6 +32,6 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:artist, :title)
+    params.require(:song).permit(:artist, :title, :playlist_id)
   end
 end
