@@ -16,6 +16,7 @@ ja:
     logout_message: 'ログアウトしますか？'
     delete_message: '削除しますか？'
     select_playlist: 'プレイリストを選択してください'
+    require_login: 'ログインしてください。'
   users:
     new:
       title: 'ユーザー登録'
