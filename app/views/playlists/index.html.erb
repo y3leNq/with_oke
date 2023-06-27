@@ -4,10 +4,10 @@
       <h2 class="text-center my-5"><%= t('.title') %></h2>
 
       <div class="d-flex justify-content-end">
-        <%= link_to t('.btn'), new_playlist_path, class: "btn btn-outline-success", data: { turbo_frame: dom_id(Playlist.new) } %>
+        <%= link_to t('.btn'), new_playlist_path, class: "btn btn-outline-success" %>
       </div>
 
-      <%= turbo_frame_tag Playlist.new %>
+      <%# <%= turbo_frame_tag Playlist.new %>
 
       <div id="playlists">
         <% if @playlists.present? %>

@@ -1,13 +1,11 @@
-<%= turbo_frame_tag @playlist do %>
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2 my-5">
-        <% if @playlist.songs.present? %>
-          <% @playlist.songs.each do |song| %>
-            <%= render 'playlist_song', song: song %>
-          <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2 my-5">
+      <% if @playlist.songs.present? %>
+        <% @playlist.songs.each do |song| %>
+          <%= render 'playlist_song', song: song %>
         <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
-<% end %>
+</div>
