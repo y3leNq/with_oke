@@ -22,4 +22,6 @@
 class PlaylistSong < ApplicationRecord
   belongs_to :playlist
   belongs_to :song
+
+  validates :key, presence: true, inclusion: -6..6
 end

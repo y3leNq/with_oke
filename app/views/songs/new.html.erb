@@ -12,6 +12,10 @@
             <%= f.text_field :title, placeholder: (t '.placeholder_title'), class: 'form-control' %>
           </div>
           <div class="mb-4">
+            <%= f.label :key, (t 'defaults.key'), class: 'form-label' %>
+            <%= f.select :key, options_for_select((-6..6).map { |n| [n == 0? '原キー' : (n > 0 ? "+#{n}" : n), n] }, selected: 0), {}, class: "form-select" %>
+          </div>
+          <div class="mb-4">
             <%= f.label :playlist_id, Playlist.model_name.human, class: 'form-label' %>
             <%= f.select :playlist_id, current_user.playlists.map { |n| [n.name, n.id] }, { include_blank: (t 'defaults.select_playlist') }, class: "form-select", required: true %>
             <div class="d-flex justify-content-end">
