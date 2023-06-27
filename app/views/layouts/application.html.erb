@@ -13,14 +13,21 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="d-flex flex-column min-vh-100">
-    <%= render 'shared/header' %>
+  <body>
+    <% if logged_in? %>
+      <%= render 'shared/header' %>
+    <% else %>
+      <%= render 'shared/before_login_header' %>
+    <% end %>
+
     <div id='flash_message'>
       <%= render 'shared/flash_messages' %>
     </div>
+
     <div class="flex-grow-1 mb-5">
       <%= yield %>
     </div>
+
     <%= render 'shared/footer' %>
     <%= render 'shared/bottom_navigation' %>
   </body>

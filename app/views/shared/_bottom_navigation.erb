@@ -1,19 +1,19 @@
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-4">
   <div class="row bg-light">
-    <nav class="nav justify-content-center fixed-bottom bg-custom d-flex flex-row">
+    <nav class="nav justify-content-center fixed-bottom nav-color d-flex flex-row align-item-center">
       <div class="nav-item flex-grow-1 text-center">
-        <%= link_to playlists_path, class: 'nav-link text-dark mt-3' do %>
+        <%= link_to playlists_path, class: 'nav-link text-dark mt-2' do %>
           <i class="fa-solid fa-list"></i>
           <p><%= (t 'defaults.playlist') %></p>
         <% end %>
       </div>
       <div class="nav-item flex-grow-1 text-center">
-        <%= link_to songs_path, class: 'nav-link text-dark mt-3' do %>
+        <%= link_to songs_path, class: 'nav-link text-dark mt-2' do %>
           <i class="fa-solid fa-magnifying-glass"></i>
           <p><%= (t 'defaults.search') %></p>
         <% end %>
       </div>
-      <div class="nav-item flex-grow-1 text-center mt-3">
+      <div class="nav-item flex-grow-1 text-center mt-2">
         <%= link_to '#', class: 'nav-link text-dark' do %>
           <i class="fa-solid fa-gear"></i>
           <p><%= (t 'defaults.settings') %></p>
