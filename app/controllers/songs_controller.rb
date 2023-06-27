@@ -17,6 +17,23 @@ class SongsController < ApplicationController
     end
   end
 
+  def edit
+    @playlist = current_user.playlists.find(params[:playlist_id])
+    @song = @playlist.songs.find(params[:id])
+    @playlist_song = PlaylistSong.find_by(playlist_id: @playlist.id, song_id: @song.id)
+  end
+
+  def update
+    @playlist = current_user.playlists.find(params[:playlist_id])
+    @song = @playlist.songs.find(params[:id])
+
+    if @song.update(song_params.except(:key, :playlist_id))
+      redirect_to @playlist
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def search
     if params[:search].present?
       @songs = Song.search(params[:search])
