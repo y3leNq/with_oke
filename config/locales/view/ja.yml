@@ -55,7 +55,7 @@ ja:
       no_result: '検索結果が見つかりませんでした。'
   playlists:
     index:
-      title: 'プレイリスト一覧'
+      title: 'プレイリスト'
       no_result: 'プレイリストがありません。'
       btn: '新規作成'
     new:

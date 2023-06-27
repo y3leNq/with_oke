@@ -8,7 +8,7 @@
     </div>
     <div class="text-center pt-3">
       <%= f.submit playlist.new_record? ? (t 'defaults.create') : (t 'defaults.edit'), class: 'btn btn-primary' %>
-      <%= link_to (t 'defaults.cancel'), playlist, class: 'btn btn-outline-secondary' %>
+      <%= link_to (t 'defaults.cancel'), :back, class: 'btn btn-outline-secondary' %>
     </div>
   <% end %>
 <% end %>
