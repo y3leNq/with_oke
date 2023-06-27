@@ -6,17 +6,13 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new(song_params.except(:playlist_id))
     @playlist = Playlist.find(params[:song][:playlist_id])
+    @song = @playlist.songs.build(song_params.except(:playlist_id, :key))
 
-    begin
-      ActiveRecord::Base.transaction do
-        @song.save!
-        @playlist.songs << @song
-      end
-      flash[:info] = t('.success', item: @playlist.name)
-      redirect_to @playlist
-    rescue ActiveRecord::RecordInvalid
+    if @song.save
+      @playlist.playlist_songs.create(song: @song, key: params[:song][:key])
+      redirect_to @playlist, info: (t '.success', item: @playlist.name)
+    else
       render :new, status: :unprocessable_entity
     end
   end
@@ -32,6 +28,6 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:artist, :title, :playlist_id)
+    params.require(:song).permit(:artist, :title, :key, :playlist_id)
   end
 end

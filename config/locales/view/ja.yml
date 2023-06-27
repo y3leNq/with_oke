@@ -13,6 +13,7 @@ ja:
     search: 'さがす'
     settings: 'その他'
     playlist: 'リスト'
+    key: 'キー'
     terms_of_service: '利用規約'
     privacy_policy: 'プライバシーポリシー'
     placeholder: '曲名かアーティスト名で検索できます'
@@ -21,6 +22,7 @@ ja:
     select_playlist: 'プレイリストを選択してください'
     require_login: 'ログインしてください。'
     select_playlist: 'プレイリストを選択してください'
+    select_key: 'キーを選択してください'
     require_login: 'ログインしてください。'
   users:
     new:
@@ -72,6 +74,6 @@ ja:
     new:
       placeholder_artist: '歌手名を入力してください'
       placeholder_title: '曲名を入力してください'
-      not_have_playlist: 'プレイリストの作成はこちら'
+      not_have_playlist: 'プレイリスト作成ページ'
     create:
       success: '%{item}に追加しました。'
