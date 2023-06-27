@@ -24,6 +24,7 @@ ja:
     select_playlist: 'プレイリストを選択してください'
     select_key: 'キーを選択してください'
     require_login: 'ログインしてください。'
+    delete_playlist_song: '%{item}をプレイリストから削除しました'
   users:
     new:
       title: 'ユーザー登録'

@@ -9,7 +9,7 @@
       </p>
       <div class="position-absolute bottom-0 end-0 mb-2 me-2">
         <%= link_to (t 'defaults.edit'), edit_playlist_song_path(playlist, song), class: "btn btn-success btn-sm" %>
-        <%= link_to (t 'defaults.destroy'), playlist_song_path(song), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: (t 'defaults.delete_message') } %>
+        <%= link_to (t 'defaults.destroy'), playlist_song_path(playlist, song), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: (t 'defaults.delete_message') } %>
       </div>
     </div>
   </li>

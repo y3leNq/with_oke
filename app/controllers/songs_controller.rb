@@ -34,6 +34,13 @@ class SongsController < ApplicationController
     end
   end
 
+  def destroy
+    @playlist = current_user.playlists.find(params[:playlist_id])
+    @song = @playlist.songs.find(params[:id])
+    @song.destroy
+    redirect_to @playlist, info: (t 'defaults.delete_playlist_song', item: @song.title)
+  end
+
   def search
     if params[:search].present?
       @songs = Song.search(params[:search])
