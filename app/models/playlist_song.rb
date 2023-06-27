@@ -3,6 +3,7 @@
 # Table name: playlist_songs
 #
 #  id          :bigint           not null, primary key
+#  key         :integer          default(0), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  playlist_id :bigint           not null
