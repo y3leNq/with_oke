@@ -1,5 +1,9 @@
 @import "bootstrap";
 
+.nav-img {
+  width: 220px;
+}
+
 body {
   background-color: #fffefa;
   display: flex;
@@ -15,7 +19,7 @@ body {
   width: 17%;
 }
 
-.header-color {
+.nav-color {
   background-color: rgb(249, 249, 216);
 }
 
@@ -39,10 +43,17 @@ body {
   top: calc(50% - 0.5em);
 }
 
-.playlist_title {
-  margin-left: 2rem;
-}
-
 .bg-custom {
   background-color: rgb(249, 249, 216);
+}
+
+footer {
+  background-color: white;
+}
+
+.nav-title {
+  font-family: 'Cherry Bomb One', cursive;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.8);
+  color: #faff04;
+  font-size: 35px;
 }
