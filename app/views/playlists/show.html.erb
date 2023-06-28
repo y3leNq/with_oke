@@ -1,7 +1,12 @@
-<p style="color: green"><%= notice %></p>
-<%= render @playlist %>
-<div>
-  <%= link_to "Back to playlists", playlists_path %>
-
-  <%= button_to "Destroy this playlists", method: :delete %>
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2 my-5">
+      <h2 class="text-center my-5"><%= @playlist.name %></h2>
+      <% if @playlist.songs.present? %>
+        <% @playlist.songs.each do |song| %>
+          <%= render 'playlist_song', song: song, playlist: @playlist %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>

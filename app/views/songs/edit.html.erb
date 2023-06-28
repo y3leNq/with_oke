@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3 mt-5">
+        <%= form_with model: [@playlist, @song] do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+          <div class="mb-4 mt-5">
+            <%= f.label :artist, class: 'form-label' %>
+            <%= f.text_field :artist, placeholder: (t '.placeholder_artist'), class: 'form-control' %>
+          </div>
+          <div class="mb-4">
+            <%= f.label :title, class: 'form-label' %>
+            <%= f.text_field :title, placeholder: (t '.placeholder_title'), class: 'form-control' %>
+          </div>
+          <div class="mb-4">
+            <%= f.label :key, (t 'defaults.key'), class: 'form-label' %>
+            <%= f.select :key, options_for_select((-6..6).map { |n| [n == 0? '原キー' : (n > 0 ? "+#{n}" : n), n] }, selected: @playlist_song.key), {}, class: "form-select" %>
+          </div>
+          <div class="mb-4">
+            <%= f.label :playlist_id, Playlist.model_name.human, class: 'form-label' %>
+            <%= f.select :playlist_id, current_user.playlists.map { |n| [n.name, n.id] }, { selected: @playlist.id }, class: "form-select", required: true %>
+            <div class="d-flex justify-content-end">
+              <%= link_to (t '.not_have_playlist'), playlists_path %>
+            </div>
+          </div>
+          <div class="text-center mt-5">
+            <%= f.submit class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
