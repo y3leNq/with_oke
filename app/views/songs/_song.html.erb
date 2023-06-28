@@ -9,6 +9,7 @@
         <%= song["artistName"] %>
       </p>
       <audio controls src="<%= song["previewUrl"] %>"></audio>
+      <%= link_to 'Add', new_song_path(track_id: song["trackId"]), class: "btn btn-primary" %>
     </div>
   </li>
 </ol>

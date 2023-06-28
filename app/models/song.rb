@@ -20,4 +20,8 @@ class Song < ApplicationRecord
   def self.search(query)
     ITunesSearchAPI.search(term: query, media: "music", country: 'jp', limit: 2)
   end
+
+  def self.lookup(query)
+    ITunesSearchAPI.lookup(id: query, country: 'jp')
+  end
 end

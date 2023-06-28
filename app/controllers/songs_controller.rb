@@ -5,6 +5,12 @@ class SongsController < ApplicationController
 
   def new
     @song = Song.new
+
+    if params[:track_id].present?
+      track_info = Song.lookup(params[:track_id])
+      @song.title = track_info[0]['trackName']
+      @song.artist = track_info[0]['artistName']
+    end
   end
 
   def create
