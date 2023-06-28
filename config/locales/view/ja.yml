@@ -23,8 +23,7 @@ ja:
     require_login: 'ログインしてください。'
     select_playlist: 'プレイリストを選択してください'
     select_key: 'キーを選択してください'
-    require_login: 'ログインしてください。'
-    delete_playlist_song: '%{item}をプレイリストから削除しました'
+    require_login: 'ログインしてください。' 
   users:
     new:
       title: 'ユーザー登録'
@@ -78,3 +77,8 @@ ja:
       not_have_playlist: 'プレイリスト作成ページ'
     create:
       success: '%{item}に追加しました。'
+    update:
+      success: '楽曲情報を更新しました'
+    destroy:
+      success: '%{item}をプレイリストから削除しました'
+      
