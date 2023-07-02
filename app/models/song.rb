@@ -16,7 +16,7 @@ class Song < ApplicationRecord
   has_many :playlists, through: :playlist_songs
 
   validates :artist, :title, presence: true
-  validate :exist_song
+  validates :artist, uniqueness: { scope: :title }
 
   def self.search(query)
     ITunesSearchAPI.search(term: query, media: "music", country: 'jp', limit: 2)
@@ -24,14 +24,5 @@ class Song < ApplicationRecord
 
   def self.lookup(query)
     ITunesSearchAPI.lookup(id: query, country: 'jp')
-  end
-
-  def exist_song
-    if Song.exists?(title: title, artist: artist)
-      errors.add(:base, 'この楽曲は存在しています')
-      false
-    else
-      true
-    end
   end
 end
