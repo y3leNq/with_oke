@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_084858) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "key", default: 0, null: false
+    t.index ["playlist_id", "song_id"], name: "index_playlist_songs_on_playlist_id_and_song_id", unique: true
     t.index ["playlist_id"], name: "index_playlist_songs_on_playlist_id"
     t.index ["song_id"], name: "index_playlist_songs_on_song_id"
   end

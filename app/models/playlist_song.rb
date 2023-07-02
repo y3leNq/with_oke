@@ -11,8 +11,9 @@
 #
 # Indexes
 #
-#  index_playlist_songs_on_playlist_id  (playlist_id)
-#  index_playlist_songs_on_song_id      (song_id)
+#  index_playlist_songs_on_playlist_id              (playlist_id)
+#  index_playlist_songs_on_playlist_id_and_song_id  (playlist_id,song_id) UNIQUE
+#  index_playlist_songs_on_song_id                  (song_id)
 #
 # Foreign Keys
 #
@@ -24,4 +25,5 @@ class PlaylistSong < ApplicationRecord
   belongs_to :song
 
   validates :key, presence: true, inclusion: -6..6
+  validates :song_id, uniqueness: { scope: :playlist_id }
 end
