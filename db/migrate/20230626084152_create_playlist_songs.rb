@@ -6,5 +6,6 @@ class CreatePlaylistSongs < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+    add_index :playlist_songs, [:playlist_id, :song_id], unique: true
   end
 end

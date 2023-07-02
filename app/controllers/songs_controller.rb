@@ -5,15 +5,27 @@ class SongsController < ApplicationController
 
   def new
     @song = Song.new
+
+    if params[:track_id].present?
+      track_info = Song.lookup(params[:track_id])
+      @song.title = track_info[0]['trackName']
+      @song.artist = track_info[0]['artistName']
+    end
   end
 
   def create
     @playlist = Playlist.find(params[:song][:playlist_id])
-    @song = @playlist.songs.build(song_params.except(:playlist_id, :key))
+    @song = Song.find_or_create_by(title: params[:song][:title], artist: params[:song][:artist])
+    playlist_song = PlaylistSong.find_by(song_id: @song.id, playlist_id: @playlist.id)
 
-    if @song.save
-      @playlist.playlist_songs.create(song: @song, key: params[:song][:key])
-      redirect_to @playlist, info: (t '.success', item: @playlist.name)
+    if @song.persisted?
+      if !playlist_song.present?
+        @playlist.playlist_songs.create(song_id: @song.id, playlist_id: @playlist.id, key: params[:song][:key])
+        redirect_to @playlist, info: (t '.success', item: @playlist.name)
+      else
+        flash.now[:danger] = (t '.fail')
+        render :new, status: :unprocessable_entity
+      end
     else
       render :new, status: :unprocessable_entity
     end
