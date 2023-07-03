@@ -82,4 +82,6 @@ ja:
       success: '楽曲情報を更新しました'
     destroy:
       success: '%{item}をプレイリストから削除しました'
-      
+  scores:
+    create:
+      success: 'スコアを記録しました'

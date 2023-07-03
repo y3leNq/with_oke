@@ -23,4 +23,7 @@
 class Score < ApplicationRecord
   belongs_to :user
   belongs_to :song
+
+  validates :score, presence: true, inclusion: 0..100
+  validates :key, presence: true, inclusion: -6..6
 end
