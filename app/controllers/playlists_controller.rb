@@ -10,7 +10,6 @@ class PlaylistsController < ApplicationController
   end
 
   def show
-    @playlist = current_user.playlists.find(params[:id])
     @songs = @playlist.songs.includes(:playlist_songs)
   end
 
