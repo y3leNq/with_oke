@@ -24,6 +24,6 @@ class PlaylistSong < ApplicationRecord
   belongs_to :playlist
   belongs_to :song
 
-  validates :key, presence: true, inclusion: -6..6
+  validates :key, presence: true, numericality: { greater_than_or_equal_to: -6, less_than_or_equal_to: 6 }
   validates :song_id, uniqueness: { scope: :playlist_id }
 end

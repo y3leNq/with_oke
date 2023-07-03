@@ -1,26 +1,32 @@
 <div class="container">
   <div class="row">
     <div class="col-6 offset-3 mt-5">
-        <%= form_with model: [@song, @score] do |f| %>
-          <%= render 'shared/error_messages', object: f.object %>
-          <% @song.scores.each do |score| %>
-            <%= score.score %>
-            <%= score.key %>
-          <% end %>
-          <h3 class="text-center mb-4"><%= @song.artist %> / <%= @song.title %></h3>
-          <div class="mb-4 col-md-3">
-            <%= f.label :score, class: 'form-label' %>
-            <%= f.number_field :score, step: :any, placeholder: '99.999', class: 'form-control' %>
-          </div>
-          <div class="mb-4 col-md-3">
-            <%= f.label :key, class: 'form-label' %>
-            <%= f.select :key, options_for_select((-6..6).map { |n| [n == 0? '原キー' : (n > 0 ? "+#{n}" : n), n] }, selected: 0), {}, class: "form-select" %>
-          </div>
-          <div class="text-center mt-5">
-            <%= f.submit 'OK', class: 'btn btn-primary actions' %>
-          </div>
+      <% if current_user.scores.present? %>
+        <% @song.scores.each do |score| %>
+          <%= score.score %>
+          <%= score.key %>
         <% end %>
-      </div>
+      <% end %>
+      <h3 class="text-center mb-4"><%= @song.artist %> / <%= @song.title %></h3>
+      <%= form_with model: [@song, @score] do |f| %>
+        <%= render 'shared/error_messages', object: f.object %> 
+        <div class="mb-4 col-md-3">
+          <div>
+            <%= f.label :score, class: 'form-label' %>
+          </div>
+          <div class="d-flex align-items-center">
+            <%= f.number_field :score, step: :any, placeholder: '100.00', class: 'form-control mr-2' %>
+            <span class="ms-2">点</span>
+          </div>
+        </div>
+        <div class="mb-4 col-md-3">
+          <%= f.label :key, class: 'form-label' %>
+          <%= f.select :key, options_for_select((-6..6).map { |n| [n == 0? '原キー' : (n > 0 ? "+#{n}" : n), n] }, selected: 0), {}, class: "form-select" %>
+        </div>
+        <div class="text-center mt-5">
+          <%= f.submit 'OK', class: 'btn btn-primary actions' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

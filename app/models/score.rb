@@ -24,6 +24,6 @@ class Score < ApplicationRecord
   belongs_to :user
   belongs_to :song
 
-  validates :score, presence: true, inclusion: 0..100
-  validates :key, presence: true, inclusion: -6..6
+  validates :score, presence: true, numericality: { greater_than_or_equal_to: 60, less_than_or_equal_to: 100, message: 'を60 ~ 100までの値で入力してください' }
+  validates :key, presence: true, numericality: { greater_than_or_equal_to: -6, less_than_or_equal_to: 6 }
 end

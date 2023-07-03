@@ -11,8 +11,9 @@ class ScoresController < ApplicationController
     if @score.save
       redirect_to new_song_score_path(@song), info: (t '.success')
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
+    binding.b
   end
 
   private
