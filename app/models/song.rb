@@ -14,12 +14,13 @@ class Song < ApplicationRecord
 
   has_many :playlist_songs, dependent: :destroy
   has_many :playlists, through: :playlist_songs
+  has_many :scores
 
   validates :artist, :title, presence: true
   validates :artist, uniqueness: { scope: :title }
 
   def self.search(query)
-    ITunesSearchAPI.search(term: query, media: "music", country: 'jp', limit: 2)
+    ITunesSearchAPI.search(term: query, media: 'music', country: 'jp', limit: 2)
   end
 
   def self.lookup(query)

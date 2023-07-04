@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-8 offset-2 my-5">
       <h2 class="text-center my-5"><%= @playlist.name %></h2>
-      <% if @playlist.songs.present? %>
-        <% @playlist.songs.each do |song| %>
+      <% if @songs.present? %>
+        <% @songs.each do |song| %>
           <%= render 'playlist_song', song: song, playlist: @playlist %>
         <% end %>
       <% end %>

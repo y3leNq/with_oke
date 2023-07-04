@@ -7,8 +7,21 @@
       <p>
         <%= song.artist %>
       </p>
+      <p>
+        <%= song.playlist_songs[0].key %>
+      </p>
+      <% if current_user.scores.where(song_id: song.id).any? %>
+        <p>
+          <%= highest_score(song) %>
+        </p>
+      <% else %>
+        <p>
+          <%= '-' %>
+        </p>
+      <% end %>
       <div class="position-absolute bottom-0 end-0 mb-2 me-2">
         <%= link_to (t 'defaults.edit'), edit_playlist_song_path(playlist, song), class: "btn btn-success btn-sm" %>
+        <%= link_to Score.model_name.human, new_song_score_path(song), class: "btn btn-warning btn-sm text-white" %>
         <%= link_to (t 'defaults.destroy'), playlist_song_path(playlist, song), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: (t 'defaults.delete_message') } %>
       </div>
     </div>

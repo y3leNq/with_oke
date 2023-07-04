@@ -9,7 +9,9 @@ class PlaylistsController < ApplicationController
     @playlist = Playlist.new
   end
 
-  def show; end
+  def show
+    @songs = @playlist.songs.includes(:playlist_songs)
+  end
 
   def create
     @playlist = current_user.playlists.build(playlist_params)

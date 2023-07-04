@@ -4,6 +4,7 @@ ja:
       user: 'ユーザー'
       playlist: 'プレイリスト'
       song: '楽曲'
+      score: 'スコア'
     attributes:
       user:
         name: 'ユーザーネーム'
@@ -15,3 +16,6 @@ ja:
       song:
         title: 'タイトル'
         artist: 'アーティスト'
+      score:
+        score: 'スコア'
+        key: 'キー'
