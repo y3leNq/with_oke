@@ -2,6 +2,8 @@ class ScoresController < ApplicationController
   def new
     @song = Song.find(params[:song_id])
     @score = Score.new
+    @chart = @song.scores.group_by { |score| score.key.to_s }.to_h.transform_values { |scores| scores.max_by(&:score).score }.sort_by { |key, _| key.to_f }
+    binding.b
   end
 
   def create
@@ -13,7 +15,6 @@ class ScoresController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-    binding.b
   end
 
   private
