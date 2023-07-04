@@ -26,4 +26,12 @@ class Song < ApplicationRecord
   def self.lookup(query)
     ITunesSearchAPI.lookup(id: query, country: 'jp')
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["artist", "created_at", "id", "itunes_id", "title", "updated_at"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["playlist_songs", "playlists", "scores"]
+  end
 end

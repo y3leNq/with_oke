@@ -10,7 +10,12 @@ class PlaylistsController < ApplicationController
   end
 
   def show
-    @songs = @playlist.songs.includes(:playlist_songs)
+    @q = Song.ransack(params[:q])
+    if params[:q].present?
+      @songs = @q.result(distinct: true).includes([:playlist_songs])
+    else
+      @songs = @playlist.songs.includes(:playlist_songs)
+    end
   end
 
   def create
