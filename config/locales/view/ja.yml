@@ -33,6 +33,7 @@ ja:
       title: 'ログイン'
       forgot_password: 'パスワードを忘れた方'
       not_have_account: 'アカウントを持っていない方'
+      remember_me: '次回から自動的にログイン'
     create:
       success: 'ログインしました'
       fail: 'メールアドレスまたはパスワードが間違っています。'
