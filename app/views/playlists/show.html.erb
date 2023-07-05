@@ -1,20 +1,23 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8 offset-2 my-5">
-      <%= search_form_for @q, url: playlist_path(@playlist) do |f| %>
-        <div class="input-wrapper mb-4">
-          <i class="fa-solid fa-magnifying-glass search-icon"></i>
-          <%= f.search_field :title_or_artist_cont, placeholder: (t 'defaults.placeholder'), class: 'form-control form-control-with-icon' %>
-        </div>
-      <% end %>
-      <h2 class="text-center my-5"><%= @playlist.name %></h2>
-      <th><%= sort_link(@q, :title) %></th>
-      <th><%= sort_link(@q, :artist) %></th>
-      <% if @songs.present? %>
-        <% @songs.each do |song| %>
-          <%= render 'playlist_song', song: song, playlist: @playlist %>
+<%= turbo_frame_tag "songs-list" do %>
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2 my-5">
+        <%= search_form_for @q, url: playlist_path(@playlist), html: { data: { turbo_frame: "songs-list" } } do |f| %>
+          <div class="input-wrapper mb-4">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <%= f.search_field :title_or_artist_cont, placeholder: (t 'defaults.placeholder'), class: 'form-control form-control-with-icon' %>
+          </div>
         <% end %>
-      <% end %>
+        <h2 class="text-center my-5"><%= @playlist.name %></h2>
+        <th><%= sort_link(@q, :title) %></th>
+        <th><%= sort_link(@q, :artist) %></th>
+        <% if @songs.present? %>
+          <% @songs.each do |song| %>
+            <%= render 'song', song: song, playlist: @playlist %>
+          <% end %>
+          <%= paginate @songs %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>

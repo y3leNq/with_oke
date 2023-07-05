@@ -12,9 +12,9 @@ class PlaylistsController < ApplicationController
   def show
     @q = Song.ransack(params[:q])
     if params[:q].present?
-      @songs = @q.result(distinct: true).includes([:playlist_songs])
+      @songs = @q.result(distinct: true).includes(:playlist_songs).page(params[:page]).per(2)
     else
-      @songs = @playlist.songs.includes(:playlist_songs)
+      @songs = @playlist.songs.includes(:playlist_songs).page(params[:page]).per(2)
     end
   end
 
