@@ -10,11 +10,11 @@ Rails.application.routes.draw do
   get 'search', to: 'songs#search', as: :search
 
   resources :password_resets, only: %i[new create edit update]
-  resources :songs, only: %i[index new create show] do
+  resources :songs, only: %i[index new create] do
     resources :scores
   end
 
   resources :playlists do
-    resources :songs, only: %i[edit update destroy]
+    resources :songs, only: %i[edit update destroy show]
   end
 end

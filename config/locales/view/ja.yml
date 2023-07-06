@@ -24,6 +24,8 @@ ja:
     select_playlist: 'プレイリストを選択してください'
     select_key: 'キーを選択してください'
     require_login: 'ログインしてください。' 
+    placeholder_title: '曲名を入力してください'
+    placeholder_artist: 'アーティスト名を入力してください'
   users:
     new:
       title: 'ユーザー登録'
@@ -51,9 +53,6 @@ ja:
       success: '入力されたメールアドレス宛にパスワード再設定のURLが送られました'
     update:
       success: 'パスワードの変更に成功しました。'
-  songs:
-    search:
-      no_result: '検索結果が見つかりませんでした。'
   playlists:
     index:
       title: 'プレイリスト'
@@ -73,8 +72,6 @@ ja:
       success: 'プレイリストを更新しました。'
   songs:
     new:
-      placeholder_artist: '歌手名を入力してください'
-      placeholder_title: '曲名を入力してください'
       not_have_playlist: 'プレイリスト作成ページ'
     create:
       success: '%{item}に追加しました。'
@@ -83,6 +80,8 @@ ja:
       success: '楽曲情報を更新しました'
     destroy:
       success: '%{item}をプレイリストから削除しました'
+    search:
+      no_result: '検索結果が見つかりませんでした。'
   scores:
     create:
       success: 'スコアを記録しました'

@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-  before_action :set_song, only: %i[edit update destroy]
+  before_action :set_song, only: %i[show edit update destroy]
 
   def index; end
 
@@ -31,21 +31,23 @@ class SongsController < ApplicationController
     end
   end
 
+  def show; end
+
   def edit
     @playlist_song = @song.playlist_songs.find_by(playlist_id: @playlist.id)
   end
 
   def update
     if @song.update(song_params.except(:playlist_id, :key)) && @song.playlist_songs.update(playlist_id: params[:song][:playlist_id], key: params[:song][:key])
-      redirect_to @playlist, info: (t '.success')
+      flash.now[:info] = (t '.success')
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @song.destroy
-    redirect_to @playlist, info: (t '.success', item: @song.title)
+    @playlist.songs.destroy(@song)
+    flash.now[:info] = (t '.success', item: @song.title)
   end
 
   def search
