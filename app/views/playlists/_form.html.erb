@@ -1,12 +1,9 @@
-<%= form_with model: playlist do |f| %>
+<%= bootstrap_form_with(model: @playlist, data: { action: "turbo:submit-end->modal#close" }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="input-wrapper my-3">
-    <i class="fa fa-list input-icon"></i>
-    <%= f.label :name, class: 'form-label' %>
-    <%= f.text_field :name, class: 'form-control rounded-pill form-control-with-icon' %>
+  <div class="mt-4">
+    <%= f.text_field :name, placeholder: (t 'defaults.placeholder_artist') %>
   </div>
-  <div class="text-center pt-3">
-    <%= f.submit playlist.new_record? ? (t 'defaults.create') : (t 'defaults.edit'), class: 'btn btn-primary' %>
-    <%= link_to (t 'defaults.cancel'), :back, class: 'btn btn-outline-secondary' %>
+  <div class="text-center my-4">
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
