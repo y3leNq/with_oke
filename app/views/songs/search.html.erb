@@ -5,9 +5,9 @@
       <% if @songs.present? %>
         <%= render partial: 'song', collection: @songs %>
       <% else %>
-        <h5 class="text-center pt-5">
-          <%= t '.no_result' %>
-        <h5>
+        <p class="text-center my-5">
+          <%= (t '.no_result') %>
+        </p>
       <% end %>
     </div>
   </div>

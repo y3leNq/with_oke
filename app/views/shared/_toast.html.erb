@@ -1,0 +1,19 @@
+<% if info %>
+  <div class="mb-2 toast hide border-info" data-controller="toast">
+    <div class="toast-header text-info">
+      <strong class="me-auto"><%= 'success' %></strong>
+      <button class="btn-close" data-bs-dismiss="toast">
+    </div>
+    <div class="toast-body"><%= info %></div>
+  </div>
+<% end %>
+
+<% if danger %>
+  <div class="mb-2 toast hide border-danger" data-controller="toast">
+    <div class="toast-header text-danger">
+      <strong class="me-auto"><%= 'error' %></strong>
+      <button class="btn-close" data-bs-dismiss="toast">
+    </div>
+    <div class="toast-body"><%= danger %></div>
+  </div>
+<% end %>

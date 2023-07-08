@@ -6,11 +6,11 @@ ja:
     logout: 'ログアウト'
     submit: '送る'
     decision: '決定'
-    create: '作成する'
-    edit: '編集'
+    create: '作成'
+    edit: '更新'
     destroy: '削除'
     cancel: 'キャンセル'
-    search: 'さがす'
+    search: '検索'
     settings: 'その他'
     playlist: 'リスト'
     key: 'キー'
@@ -26,6 +26,7 @@ ja:
     require_login: 'ログインしてください。' 
     placeholder_title: '曲名を入力してください'
     placeholder_artist: 'アーティスト名を入力してください'
+    placeholder_playlist: 'プレイリスト名を入力してください'
     no_playlist: 'プレイリストの作成はこちら'
   users:
     new:
@@ -61,14 +62,11 @@ ja:
       btn: '新規作成'
     new:
       title: 'プレイリスト作成'
-      description: '新しく作成するプレイリストの名前を決めてください。'
       btn: '作成する'
     create:
       success: 'プレイリストを作成しました。'
     destroy:
       success: 'プレイリストを削除しました。'
-    edit:
-      description: '新しいプレイリストの名前を決めてください。'
     update:
       success: 'プレイリストを更新しました。'
   songs:
