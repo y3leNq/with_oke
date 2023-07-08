@@ -6,14 +6,15 @@ ja:
     logout: 'ログアウト'
     submit: '送る'
     decision: '決定'
-    create: '作成する'
-    edit: '編集'
+    create: '作成'
+    edit: '更新'
     destroy: '削除'
     cancel: 'キャンセル'
-    search: 'さがす'
+    search: '検索'
     settings: 'その他'
     playlist: 'リスト'
     key: 'キー'
+    original_key: '原曲キー'
     terms_of_service: '利用規約'
     privacy_policy: 'プライバシーポリシー'
     placeholder: '曲名かアーティスト名で検索できます'
@@ -21,9 +22,12 @@ ja:
     delete_message: '削除しますか？'
     select_playlist: 'プレイリストを選択してください'
     require_login: 'ログインしてください。'
-    select_playlist: 'プレイリストを選択してください'
     select_key: 'キーを選択してください'
     require_login: 'ログインしてください。' 
+    placeholder_title: '曲名を入力してください'
+    placeholder_artist: 'アーティスト名を入力してください'
+    placeholder_playlist: 'プレイリスト名を入力してください'
+    no_playlist: 'プレイリストの作成はこちら'
   users:
     new:
       title: 'ユーザー登録'
@@ -51,9 +55,6 @@ ja:
       success: '入力されたメールアドレス宛にパスワード再設定のURLが送られました'
     update:
       success: 'パスワードの変更に成功しました。'
-  songs:
-    search:
-      no_result: '検索結果が見つかりませんでした。'
   playlists:
     index:
       title: 'プレイリスト'
@@ -61,21 +62,14 @@ ja:
       btn: '新規作成'
     new:
       title: 'プレイリスト作成'
-      description: '新しく作成するプレイリストの名前を決めてください。'
       btn: '作成する'
     create:
       success: 'プレイリストを作成しました。'
     destroy:
       success: 'プレイリストを削除しました。'
-    edit:
-      description: '新しいプレイリストの名前を決めてください。'
     update:
       success: 'プレイリストを更新しました。'
   songs:
-    new:
-      placeholder_artist: '歌手名を入力してください'
-      placeholder_title: '曲名を入力してください'
-      not_have_playlist: 'プレイリスト作成ページ'
     create:
       success: '%{item}に追加しました。'
       fail: 'この楽曲は既にプレイリストに追加されています'
@@ -83,6 +77,8 @@ ja:
       success: '楽曲情報を更新しました'
     destroy:
       success: '%{item}をプレイリストから削除しました'
+    search:
+      no_result: '検索結果が見つかりませんでした。'
   scores:
     create:
       success: 'スコアを記録しました'

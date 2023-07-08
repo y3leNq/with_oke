@@ -2,7 +2,7 @@ class PlaylistsController < ApplicationController
   before_action :set_playlist, only: %i[edit update destroy show]
 
   def index
-    @playlists = Playlist.all.order(created_at: :desc)
+    @playlists = current_user.playlists
   end
 
   def new
@@ -10,12 +10,8 @@ class PlaylistsController < ApplicationController
   end
 
   def show
-    @q = Song.ransack(params[:q])
-    if params[:q].present?
-      @songs = @q.result(distinct: true).includes([:playlist_songs])
-    else
-      @songs = @playlist.songs.includes(:playlist_songs)
-    end
+    @q = @playlist.songs.ransack(params[:q])
+    @songs = @q.result.includes(:playlist_songs).distinct.page(params[:page])
   end
 
   def create

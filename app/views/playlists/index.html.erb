@@ -4,16 +4,14 @@
       <h2 class="text-center my-5"><%= t('.title') %></h2>
 
       <div class="d-flex justify-content-end">
-        <%= link_to t('.btn'), new_playlist_path, class: "btn btn-outline-success" %>
+        <%= link_to t('.btn'), new_playlist_path, class: "btn btn-outline-success", data: { turbo_frame: "modal" }  %>
       </div>
-
-      <%# <%= turbo_frame_tag Playlist.new %>
 
       <div id="playlists">
         <% if @playlists.present? %>
           <%= render @playlists %>
         <% else %>
-          <p class="text-center pt-5" id="no_result">
+          <p class="text-center pt-5" id="no-result">
             <%= t('.no_result') %>
           </p>
         <% end %>

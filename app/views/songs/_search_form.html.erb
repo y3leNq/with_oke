@@ -1,6 +1,7 @@
-<%= form_with url: search_path, method: :get do |f| %>
-  <div class="input-wrapper mb-4">
+<%= form_with url: search_path, method: :get, class: 'd-flex align-items-center' do |f| %>
+  <div class="my-3 flex-grow-1 input-wrapper">
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
     <%= f.search_field :search, placeholder: (t 'defaults.placeholder'), class: 'form-control form-control-with-icon' %>
   </div>
+  <%= link_to '+', new_song_path, class: "btn btn-info text-white ms-3 rounded-pill", data: { turbo_frame: "modal" } %>
 <% end %>

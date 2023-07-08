@@ -16,15 +16,11 @@ body {
 }
 
 .actions {
-  width: 17%;
+  width: 20%;
 }
 
 .nav-color {
   background-color: rgb(249, 249, 216);
-}
-
-.form-control-with-icon {
-  padding-left: 50px;
 }
 
 .input-wrapper {
@@ -40,7 +36,11 @@ body {
 .search-icon {
   position: absolute;
   left: 20px;
-  top: calc(50% - 0.5em);
+  top: 30%;
+}
+
+.form-control-with-icon {
+  padding-left: 50px;
 }
 
 .bg-custom {
@@ -49,4 +49,21 @@ body {
 
 footer {
   background-color: white;
+}
+
+.modal-header {
+  background-color: rgb(249, 249, 216);
+}
+
+.modal-body {
+  background-color: #fffefa;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  background-color: rgb(249, 249, 216);
+}
+
+.modal-dialog {
+  max-height: calc(100% - 1rem);
 }
