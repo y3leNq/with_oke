@@ -57,8 +57,13 @@ footer {
 
 .modal-body {
   background-color: #fffefa;
+  overflow-y: auto;
 }
 
 .modal-footer {
   background-color: rgb(249, 249, 216);
+}
+
+.modal-dialog {
+  max-height: calc(100% - 1rem);
 }

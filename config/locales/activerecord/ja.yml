@@ -16,6 +16,8 @@ ja:
       song:
         title: 'タイトル'
         artist: 'アーティスト'
+        key: 'キー'
+        playlist_id: 'プレイリスト'
       score:
         score: 'スコア'
         key: 'キー'
