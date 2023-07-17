@@ -28,7 +28,8 @@ ja:
     placeholder_title: '曲名を入力してください'
     placeholder_artist: 'アーティスト名を入力してください'
     placeholder_playlist: 'プレイリスト名を入力してください'
-    no_playlist: 'プレイリストの作成はこちら'
+    no_playlist: 'プレイリストがありません。'
+    new_playlist: 'プレイリストの作成はこちら'
   users:
     new:
       title: 'ユーザー登録'
@@ -59,7 +60,6 @@ ja:
   playlists:
     index:
       title: 'プレイリスト'
-      no_result: 'プレイリストがありません。'
       btn: '新規作成'
     new:
       title: 'プレイリスト作成'

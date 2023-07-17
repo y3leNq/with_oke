@@ -11,9 +11,7 @@
         <% if @playlists.present? %>
           <%= render @playlists %>
         <% else %>
-          <p class="text-center pt-5" id="no-result">
-            <%= t('.no_result') %>
-          </p>
+          <%= render 'no_result' %>
         <% end %>
       </div>
     </div>
