@@ -27,6 +27,7 @@
             <%= link_to (t '.not_have_account'), signup_path %>
           </div>
         <% end %>
+        <%= link_to 'Login with Google', auth_at_provider_path(provider: :google) %>
       </div>
     </div>
   </div>
