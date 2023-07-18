@@ -1,5 +1,5 @@
 default_url_options:
-  protcol: 'https'
+  protocol: 'https'
   host: 'withoke-8347640388a8.herokuapp.com'
 
 sorcery:
