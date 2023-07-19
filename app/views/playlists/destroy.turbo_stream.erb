@@ -1,0 +1,3 @@
+<%= turbo_stream.remove(@playlist) %>
+<%= turbo_stream.update('flashes', partial: 'shared/toast') %>
+<%= turbo_stream.update "no-result", (t 'defaults.no_playlist') unless current_user.playlists.present? %>
