@@ -14,7 +14,7 @@ class PasswordResetsController < ApplicationController
     @user = User.load_from_reset_password_token(params[:id])
     if @user.blank?
       flash[:danger] = (t '.fail')
-      return not_authenticated
+      redirect_to root_path
     end
   end
 
