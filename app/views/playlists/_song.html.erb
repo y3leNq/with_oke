@@ -20,7 +20,7 @@
             <div class="position-absolute bottom-0 end-0 mb-2 me-2">
               <%= link_to (t 'defaults.edit'), edit_playlist_song_path(playlist, song), class: "btn btn-success btn-sm", data: { turbo_frame: "modal" } %>
               <%= link_to Score.model_name.human, new_song_score_path(song), class: "btn btn-warning btn-sm text-white", data: { turbo_frame: "_top" } %>
-              <%= link_to (t 'defaults.destroy'), playlist_song_path(playlist, song), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: (t 'defaults.delete_message') } %>
+              <%= render partial: 'shared/destroy_confirm', locals: { url: playlist_song_path(playlist, song), id: song.id } %>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ class PlaylistsController < ApplicationController
   before_action :set_playlist, only: %i[edit update destroy show]
 
   def index
-    @playlists = current_user.playlists
+    @playlists = current_user.playlists.order(created_at: :desc)
   end
 
   def new
@@ -18,14 +18,6 @@ class PlaylistsController < ApplicationController
     @playlist = current_user.playlists.build(playlist_params)
     if @playlist.save
       flash.now[:info] = (t '.success')
-      respond_to do |format|
-        format.turbo_stream do
-          render turbo_stream: 
-          turbo_stream.prepend('playlists', @playlist) +
-          turbo_stream.remove('no-result') +
-          turbo_stream.update('flashes', partial: 'shared/toast')
-        end
-      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -44,13 +36,6 @@ class PlaylistsController < ApplicationController
   def destroy
     @playlist.destroy
     flash.now[:info] = (t '.success')
-    respond_to do |format|
-      format.turbo_stream do
-        render turbo_stream:
-        current_user.playlists.empty? ? turbo_stream.update('playlists', partial: 'playlists/no_result') : turbo_stream.remove(@playlist) +
-        turbo_stream.update('flashes', partial: 'shared/toast')
-      end
-    end
   end
 
   private
