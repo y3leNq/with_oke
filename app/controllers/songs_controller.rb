@@ -49,7 +49,8 @@ class SongsController < ApplicationController
 
   def search
     if params[:search].present?
-      @songs = Song.search(params[:search])
+      result = Song.search(params[:search])
+      @songs = result.uniq { |song| [song["trackName"], song["artistName"]] }
     else
       @songs = []
     end
