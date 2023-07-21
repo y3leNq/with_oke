@@ -1,6 +1,8 @@
 ja:
   defaults:
     title: 'うぃずおけ。'
+    sign_in_with_google: 'Sign in with google'
+    forgot_password: 'Forgot password?'
     sign_up: '新規登録'
     login: 'ログイン'
     logout: 'ログアウト'
@@ -33,13 +35,10 @@ ja:
   users:
     new:
       title: 'ユーザー登録'
-      have_account: 'アカウントを持っている方'
+      register: 'Signup'
+    create:
+      success: 'アカウントの登録に成功しました'
   user_sessions:
-    new:
-      title: 'ログイン'
-      forgot_password: 'パスワードを忘れた方'
-      not_have_account: 'アカウントを持っていない方'
-      remember_me: '次回から自動的にログイン'
     create:
       success: 'ログインしました'
       fail: 'メールアドレスまたはパスワードが間違っています。'

@@ -4,11 +4,17 @@
   width: 220px;
 }
 
+//入力フォームではフォントを無効
+input {
+  font-family: system-ui;
+}
+
 body {
   background-color: #fffefa;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: 'Cherry Bomb One', cursive;
 }
 
 .how_to_list li {
@@ -16,7 +22,7 @@ body {
 }
 
 .actions {
-  width: 20%;
+  width: 15%;
 }
 
 .nav-color {
@@ -30,7 +36,7 @@ body {
 .input-icon {
   position: absolute;
   left: 20px;
-  top: calc(70% - 0.5em);
+  top: calc(70% - 0.4em);
 }
 
 .search-icon {
@@ -70,4 +76,54 @@ footer {
 
 .dlt {
   background-color: rgb(255, 255, 234);
+}
+
+//ログイン画面
+.line-separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #aaa;
+}
+
+.line-separator::before,
+.line-separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #aaa;
+}
+
+.line-separator::before {
+  margin-right: .5em;
+}
+
+.line-separator::after {
+  margin-left: .5em;
+}
+
+.text-border {
+  text-shadow:
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+  color: white;
+}
+
+.login-tab.nav-link.active {
+  background-color: #FAFF01;
+}
+
+.login-card {
+  background-color: #feffb854;
+}
+
+.nav-link.login-tab  {
+  padding: 15px 0px;
+  background-color: rgb(250, 250, 184);
+}
+
+.forgot-password {
+  text-decoration: none;
+  color: #00BBE4;
 }

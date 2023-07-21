@@ -10,7 +10,7 @@ ja:
         name: 'ユーザーネーム'
         email: 'メールアドレス'
         password: 'パスワード'
-        password_confirmation: 'パスワード(確認)'
+        password_confirmation: 'パスワード (Confirmation)'
       playlist:
         name: 'プレイリスト名'
       song:
