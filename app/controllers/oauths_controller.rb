@@ -19,9 +19,9 @@ class OauthsController < ApplicationController
 
         reset_session # protect from session fixation attack
         auto_login(@user)
-        redirect_to root_path, info: "Logged in from #{provider.titleize}!"
+        redirect_to root_path, info: (t '.success')
       rescue
-        redirect_to root_path, danger: "Failed to login from #{provider.titleize}!"
+        redirect_to root_path, danger: (t '.fail')
       end
     end
   end
