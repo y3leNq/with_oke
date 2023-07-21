@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-8 offset-2 my-5">
+    <div class="col-10 offset-1 my-5">
       <%= render 'search_form' %>
       <%= turbo_frame_tag "itune-songs" do %>
         <% if @songs.present? %>

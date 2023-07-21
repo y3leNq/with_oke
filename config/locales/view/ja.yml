@@ -6,14 +6,14 @@ ja:
     sign_up: '新規登録'
     login: 'ログイン'
     logout: 'ログアウト'
-    submit: '送る'
+    submit: 'おくる'
     decision: '決定'
     create: '作成'
     edit: '編集'
     update: '更新'
     destroy: '削除'
     cancel: 'キャンセル'
-    search: '検索'
+    search: 'さがす'
     settings: 'その他'
     playlist: 'リスト'
     key: 'キー'
@@ -34,7 +34,6 @@ ja:
   users:
     new:
       title: 'ユーザー登録'
-      register: 'Signup'
     create:
       success: 'アカウントの登録に成功しました'
   user_sessions:
@@ -46,13 +45,13 @@ ja:
   password_resets:
     new:
       title: 'パスワードリセット'
-      description: 'メールアドレス宛にパスワードリセットのURLが送られます。'
+      description: 'メールアドレスあてにパスワードリセットのURLがおくられます。'
     edit:
-      description: '新しいパスワードを入力してください。'
-      title: 'パスワード再設定'
-      fail: 'パスワードリセットの有効期限が切れています。'
+      description: 'あたらしいパスワードをきめてください。'
+      title: 'パスワードリセット'
+      fail: 'パスワードリセットのトークンがありません'
     create:
-      success: '入力されたメールアドレス宛にパスワード再設定のURLが送られました'
+      success: 'メールアドレスあてにパスワードリセットのURLがおくられました'
     update:
       success: 'パスワードの変更に成功しました。'
   playlists:

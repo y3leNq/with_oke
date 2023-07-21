@@ -22,12 +22,11 @@
     <% end %>
     <%= render 'shared/flash_messages' %>
     
-    <div class="flex-grow-1 mb-5">
+    <div>
       <%= yield %>
     </div>
 
     <%= render 'shared/footer' %>
-    <%= render 'shared/bottom_navigation' %>
     <%= turbo_frame_tag "modal" %>
     <div id="flashes" class="position-fixed top-0 end-0 mt-3 me-3"></div>
   </body>
