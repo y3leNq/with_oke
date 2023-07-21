@@ -8,11 +8,12 @@
       </div>
 
       <div id="playlists">
-        <% if @playlists.present? %>
-          <%= render @playlists %>
-        <% else %>
-          <%= render 'no_result' %>
-        <% end %>
+        <%= render @playlists %>
+        <p class="text-center pt-5" id="no-result">
+          <% unless @playlists.present? %>
+            <%= t('defaults.no_playlist') %>
+          <% end %>
+        </p>
       </div>
     </div>
   </div>
