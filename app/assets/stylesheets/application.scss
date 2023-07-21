@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 //入力フォームではフォントを無効
-input {
+input, select {
   font-family: system-ui;
 }
 
@@ -12,6 +12,12 @@ body {
   min-height: 100vh;
   font-family: 'Cherry Bomb One', cursive;
 }
+
+.btn-custom:hover {
+  background-color: rgb(90, 233, 255);
+  color: #FFF;
+}
+
 
 .how_to_list li {
   margin: 20px 0px;
