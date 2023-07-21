@@ -1,10 +1,27 @@
-<nav class="navbar navbar-expand-lg nav-color">
+<nav class="navbar nav-color">
   <div class="container-fluid d-flex justify-content-between align-items-center ms-2">
-    <div class="d-flex justify-content-center">
-      <%= image_tag 'nav_icon.png', class: 'nav-img' %>
-    </div>
-    <div class="header-button me-3">
-      <%= link_to (t 'defaults.logout'), logout_path, class: "btn btn-outline-success text-end", data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか？" } %>
+    <%= link_to root_path do %>
+      <%= image_tag 'header.png', class: "header-img" %>
+    <% end %>
+    <button type="button" class="btn-flat-border me-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <%= 'Logout' %>
+    </button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body mt-2">
+            <p class="ms-3"><%= (t 'defaults.logout_message')%></p>
+          </div>
+          <div class="modal-footer rounded-bottom dlt" data-bs-dismiss="modal">
+            <%= link_to 'No', '#', class: "btn btn-secondary btn-sm" %>
+            <%= link_to 'YES', logout_path, class: "btn btn-danger btn-sm", data: { turbo_method: :delete } %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </nav>

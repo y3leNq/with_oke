@@ -1,9 +1,5 @@
 @import "bootstrap";
 
-.nav-img {
-  width: 220px;
-}
-
 //入力フォームではフォントを無効
 input {
   font-family: system-ui;
@@ -126,4 +122,23 @@ footer {
 .forgot-password {
   text-decoration: none;
   color: #00BBE4;
+}
+
+//ヘッダー
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #ffc663;
+  border: solid 2px #ffc663;
+  background-color: rgb(249, 249, 216);
+}
+
+.btn-flat-border:hover {
+  background: #ffc663;
+  color: white;
+}
+
+.header-img {
+  width: 170px;
 }
