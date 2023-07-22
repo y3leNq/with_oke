@@ -5,23 +5,23 @@ input, select {
   font-family: system-ui;
 }
 
-footer {
-  font-family: system-ui;
-}
-
 body {
   background-color: #fffefa;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   font-family: 'Cherry Bomb One', cursive;
+  display: flex;
+  flex-direction: column;  /* 縦方向に要素を配置 */
+  min-height: 100vh;  /* ビューポートの高さを最低限確保 */
+}
+
+footer {
+  font-family: system-ui;
+  margin-top: auto;
 }
 
 .btn-custom:hover {
   background-color: rgb(90, 233, 255);
   color: #FFF;
 }
-
 
 .how_to_list li {
   margin: 20px 0px;
@@ -139,13 +139,13 @@ footer {
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
-  color: #ffc663;
-  border: solid 2px #ffc663;
+  color: #fcbb4a;
+  border: solid 2px #fcbb4a;
   background-color: rgb(249, 249, 216);
 }
 
 .btn-flat-border:hover {
-  background: #ffc663;
+  background: #fcbb4a;
   color: white;
 }
 

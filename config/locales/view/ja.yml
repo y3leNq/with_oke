@@ -80,7 +80,7 @@ ja:
   scores:
     create:
       success: 'スコアを記録しました'
-  oauth:
-    create:
-      success: 'Googleからログインしました'
-      fail: 'Googleからのログインができませんでした'
+  oauths:
+    callback:
+      success: 'ログインしました'
+      fail: 'ログインができませんでした'

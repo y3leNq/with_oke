@@ -11,7 +11,7 @@ class OauthsController < ApplicationController
   def callback
     provider = params[:provider]
     if @user = login_from(provider)
-      redirect_to root_path, info: "Logged in from #{provider.titleize}!"
+      redirect_to root_path, info: (t '.success')
     else
       begin
         @user = create_from(provider)

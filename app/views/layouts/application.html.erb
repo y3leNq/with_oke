@@ -20,12 +20,9 @@
     <% else %>
       <%= render 'shared/before_login_header' %>
     <% end %>
-    <%= render 'shared/flash_messages' %>
-    
-    <div>
-      <%= yield %>
-    </div>
 
+    <%= render 'shared/flash_messages' %>
+    <%= yield %>
     <%= render 'shared/footer' %>
     <%= turbo_frame_tag "modal" %>
     <div id="flashes" class="position-fixed top-0 end-0 mt-3 me-3"></div>
