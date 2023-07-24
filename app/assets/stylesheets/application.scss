@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 //入力フォームではフォントを無効
-input, select {
+input, select, footer {
   font-family: system-ui;
 }
 
@@ -9,30 +9,12 @@ body {
   background-color: #fffefa;
   font-family: 'Cherry Bomb One', cursive;
   display: flex;
-  flex-direction: column;  /* 縦方向に要素を配置 */
-  min-height: 100vh;  /* ビューポートの高さを最低限確保 */
-}
-
-footer {
-  font-family: system-ui;
-  margin-top: auto;
-}
-
-.btn-custom:hover {
-  background-color: rgb(90, 233, 255);
-  color: #FFF;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .how_to_list li {
   margin: 20px 0px;
-}
-
-.actions {
-  width: 18%;
-}
-
-.nav-color {
-  background-color: rgb(249, 249, 216);
 }
 
 .input-wrapper {
@@ -53,14 +35,6 @@ footer {
 
 .form-control-with-icon {
   padding-left: 50px;
-}
-
-.bg-custom {
-  background-color: rgb(249, 249, 216);
-}
-
-footer {
-  background-color: white;
 }
 
 .modal-header {
@@ -151,4 +125,26 @@ footer {
 
 .header-img {
   width: 170px;
+}
+
+.nav-color {
+  background-color: rgb(249, 249, 216);
+}
+
+//フッター
+footer {
+  margin-top: auto;
+  margin-bottom: 50px;
+  background-color: white
+}
+
+//ナビゲーションボトム
+.bg-custom {
+  background-color: rgb(249, 249, 216);
+  padding-right: 0;
+}
+
+.btn-custom:hover {
+  background-color: rgb(90, 233, 255);
+  color: #FFF;
 }
