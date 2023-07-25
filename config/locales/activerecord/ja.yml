@@ -12,7 +12,7 @@ ja:
         password: 'パスワード'
         password_confirmation: 'パスワード (Confirmation)'
       playlist:
-        name: 'プレイリスト名'
+        name: 'プレイリストネーム'
       song:
         title: 'タイトル'
         artist: 'アーティスト'
