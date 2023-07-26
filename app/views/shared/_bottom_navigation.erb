@@ -3,12 +3,11 @@
     <nav class="nav justify-content-between fixed-bottom bg-custom d-flex flex-row">
       <div class="nav-item flex-grow-1 text-center border bottom-nav <%= 'active' if current_page?(playlists_path) %>">
         <%= link_to playlists_path, class: 'nav-link text-dark my-2' do %>
-          <i class="fa-solid fa-list"></i>
+          <i class="bi bi-music-note-list"></i>
           <p class="text-border mb-0"><%= (t 'defaults.playlist') %></p>
         <% end %>
       </div>
-      <div class="nav-item flex-grow-1 text-center border bottom-nav <%= 'active' if request.path.start_with?(songs_path, search_path) %>
-">
+      <div class="nav-item flex-grow-1 text-center border bottom-nav <%= 'active' if request.path.start_with?(songs_path, search_path) %>">
         <%= link_to songs_path, class: 'nav-link text-dark my-2' do %>
           <i class="fa-solid fa-magnifying-glass"></i>
           <p class="text-border mb-0"><%= (t 'defaults.search') %></p>

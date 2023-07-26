@@ -30,7 +30,7 @@ ja:
     placeholder_artist: 'アーティスト名を入力してください'
     placeholder_playlist: 'プレイリスト名を入力してください'
     no_playlist: 'プレイリストがありません。'
-    new_playlist: 'プレイリストの作成はこちら'
+    new_playlist: 'あたらしくプレイリストをつくる'
   users:
     new:
       title: 'ユーザー登録'

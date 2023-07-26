@@ -7,7 +7,7 @@
           <%= f.search_field :title_or_artist_cont, placeholder: (t 'defaults.placeholder'), class: 'form-control form-control-with-icon' %>
         </div>
       <% end %>
-      <h2 class="text-center my-5"><%= @playlist.name %></h2>
+      <h2 class="text-center my-5 playlist-name"><%= @playlist.name %></h2>
       <%= turbo_frame_tag "songs-list" do %>
         <% if @songs.present? %>
           <th><%= sort_link(@q, :title) %></th>
