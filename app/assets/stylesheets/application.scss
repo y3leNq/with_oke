@@ -31,8 +31,12 @@ body {
   padding-left: 50px;
 }
 
-//入力フォームではフォントを無効
+//フォントを無効
 input, select, footer {
+  font-family: system-ui;
+}
+
+.no-font {
   font-family: system-ui;
 }
 
@@ -46,8 +50,9 @@ input, select, footer {
   margin: 20px 0px;
 }
 
-.playlist-name {
-  font-family: system-ui;
+//プロフィール画面
+.profile-card {
+  background-color: rgb(249, 249, 216);
 }
 
 //モーダル

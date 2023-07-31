@@ -20,7 +20,7 @@ ja:
     original_key: '原曲キー'
     terms_of_service: '利用規約'
     privacy_policy: 'プライバシーポリシー'
-    placeholder: '曲名かアーティスト名で検索できます'
+    placeholder: '曲名またはアーティスト名で検索'
     logout_message: 'ログアウトしますか？'
     delete_message: 'デリートしますか？'
     select_playlist: 'プレイリストを選択してください'
@@ -84,3 +84,6 @@ ja:
     callback:
       success: 'ログインしました'
       fail: 'ログインができませんでした'
+  profiles:
+    index:
+      title: 'プロフィール'

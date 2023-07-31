@@ -1,20 +1,20 @@
 <div class="container-fluid pt-4">
   <div class="row bg-light">
     <nav class="nav justify-content-between fixed-bottom bg-custom d-flex flex-row">
-      <div class="nav-item flex-grow-1 text-center border bottom-nav <%= 'active' if current_page?(playlists_path) %>">
-        <%= link_to playlists_path, class: 'nav-link text-dark my-2' do %>
+      <div class="nav-item flex-grow-1 text-center border bottom-nav <%= "active" if current_page?(playlists_path) %>">
+        <%= link_to playlists_path, class: "nav-link text-dark my-2" do %>
           <i class="bi bi-music-note-list"></i>
           <p class="text-border mb-0"><%= (t 'defaults.playlist') %></p>
         <% end %>
       </div>
-      <div class="nav-item flex-grow-1 text-center border bottom-nav <%= 'active' if request.path.start_with?(songs_path, search_path) %>">
-        <%= link_to songs_path, class: 'nav-link text-dark my-2' do %>
+      <div class="nav-item flex-grow-1 text-center border bottom-nav <%= "active" if request.path.start_with?(songs_path, search_path) %>">
+        <%= link_to songs_path, class: "nav-link text-dark my-2" do %>
           <i class="fa-solid fa-magnifying-glass"></i>
           <p class="text-border mb-0"><%= (t 'defaults.search') %></p>
         <% end %>
       </div>
-      <div class="nav-item flex-grow-1 text-center border">
-        <%= link_to '#', class: 'nav-link text-dark my-2' do %>
+      <div class="nav-item flex-grow-1 text-center border bottom-nav <%= "active" if current_page?(profiles_path) %>">
+        <%= link_to profiles_path, class: "nav-link text-dark my-2" do %>
           <i class="bi bi-person-fill-gear fs-5"></i>
           <p class="text-border mb-0"><%= User.model_name.human %></p>
         <% end %>
