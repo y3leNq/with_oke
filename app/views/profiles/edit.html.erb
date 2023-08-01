@@ -1,0 +1,16 @@
+<%= render "shared/modal" do %>
+  <div class="container">
+    <div class="row">
+      <div class="col-10 offset-1">
+        <%= bootstrap_form_with(model: @user, url: profile_path, data: { action: "turbo:submit-end->modal#close" }) do |f| %>
+          <div class="mt-4 text-border fs-5">
+            <%= f.text_field :name, placeholder: (t 'defaults.placeholder_username') %>
+          </div>
+          <div class="text-center my-4">
+            <%= f.submit "OK", class: "btn btn-primary actions" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

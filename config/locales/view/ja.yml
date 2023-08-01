@@ -29,6 +29,7 @@ ja:
     placeholder_title: '曲名を入力してください'
     placeholder_artist: 'アーティスト名を入力してください'
     placeholder_playlist: 'プレイリスト名を入力してください'
+    placeholder_username: 'ユーザー名を入力してください'
     no_playlist: 'プレイリストがありません。'
     new_playlist: 'あたらしくプレイリストをつくる'
   users:
@@ -85,5 +86,7 @@ ja:
       success: 'ログインしました'
       fail: 'ログインができませんでした'
   profiles:
-    index:
+    show:
       title: 'プロフィール'
+    update:
+      success: 'ユーザー名を変更しました'

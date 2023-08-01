@@ -28,13 +28,13 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :authentications
 
   has_many :playlists, dependent: :destroy
-  has_many :scores
+  has_many :scores, dependent: :destroy
 
-  validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
+  validates :password, presence: true, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
   validates :reset_password_token, uniqueness: true, allow_nil: true
 
-  validates :name, :email, :password, presence: true
+  validates :name, :email, presence: true
   validates :email, uniqueness: true
 end

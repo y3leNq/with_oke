@@ -3,7 +3,4 @@
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
     <%= f.search_field :search, placeholder: (t 'defaults.placeholder'), class: 'form-control form-control-with-icon', data: { itunes_target: 'input' } %>
   </div>
-  <%= link_to new_song_path, class: "ms-3 fs-1 plus", data: { turbo_frame: "modal" } do %>
-    <i class="fa-solid fa-circle-plus"></i>
-  <% end %>
 <% end %>
