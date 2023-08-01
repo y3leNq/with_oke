@@ -1,12 +1,12 @@
 <%= turbo_frame_tag playlist do %>
   <div class="list-group">
     <div class="list-group-item rounded mt-3 py-4 d-flex justify-content-between">
-      <%= link_to playlist_path(playlist), data: { turbo_frame: "_top" }, class: "ms-3 fs-4 text-decoration-none text-black" do %>
+      <%= link_to playlist_path(playlist), data: { turbo_frame: "_top" }, class: "ms-3 fs-4 text-decoration-none text-black no-font" do %>
         <%= playlist.name %>
       <% end %>
       <div class="position-absolute bottom-0 end-0 mb-2 me-2">
-        <%= link_to (t 'defaults.edit'), edit_playlist_path(playlist), class: "btn btn-success btn-sm", data: { turbo_frame: "modal" } %>
-        <%= render partial: 'shared/destroy_confirm', locals: { url: playlist_path(playlist), id: playlist.id } %>
+        <%= link_to "Edit", edit_playlist_path(playlist), class: "btn btn-success btn-sm", data: { turbo_frame: "modal" } %>
+        <%= render partial: "shared/destroy_confirm", locals: { url: playlist_path(playlist), id: playlist.id } %>
       </div>
     </div>
   </div>

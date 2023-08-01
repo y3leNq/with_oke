@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-6 offset-3">
-      <h2 class="text-center my-5"><%= t('.title') %></h2>
-      <p class="text-center mb-5"><%= t('.description') %></p>
+    <div class="col-8 offset-2">
+      <h1 class="text-center my-5 text-border"><%= t('.title') %></h2>
+      <p class="text-center mb-5 text-border fs-5"><%= t('.description') %></p>
       <%= form_with url: password_resets_path, local: true do |f| %>
         <div class="input-wrapper my-3">
           <i class="fa-solid fa-envelope input-icon"></i>
-          <%= f.label :email, User.human_attribute_name(:email), class: 'form-label' %>
+          <%= f.label :email, User.human_attribute_name(:email), class: 'form-label text-border fs-5' %>
           <%= f.email_field :email, class: 'form-control rounded-pill form-control-with-icon' %>
         </div>
-        <div class="text-center pt-3">
-          <%= f.submit t('defaults.submit'), class: 'btn btn-primary actions' %>
+        <div class="text-center pt-3 mb-5">
+          <%= f.submit 'OK', class: 'btn btn-primary' %>
         </div>
       <% end %>
     </div>

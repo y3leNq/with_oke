@@ -1,19 +1,15 @@
-<nav class="navbar navbar-expand-lg nav-color">
+<nav class="navbar nav-color">
   <div class="container-fluid d-flex justify-content-between align-items-center">
-    <%= image_tag 'nav_icon.png', class: "nav-img" %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <%= link_to (t 'defaults.sign_up'), signup_path, class: "btn btn-outline-success" %>
-        </li>
-        <li class="nav-item mx-3">
-          <%= link_to (t 'defaults.login'), login_path, class: "btn btn-outline-success" %>
-        </li>
-      </ul>
-    </div>
+
+    <%= link_to root_path do %>
+      <%= image_tag 'header.png', class: "header-img ms-2" %>
+    <% end %>
+
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <%= link_to 'Login / New', login_path, class: "btn-flat-border me-2 rounded-pill" %>
+      </li>
+    </ul>
   </div>
 </nav>
 

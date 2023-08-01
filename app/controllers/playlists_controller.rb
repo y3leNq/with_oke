@@ -11,7 +11,7 @@ class PlaylistsController < ApplicationController
 
   def show
     @q = @playlist.songs.ransack(params[:q])
-    @songs = @q.result.includes(:playlist_songs).distinct.page(params[:page])
+    @songs = @q.result.distinct.page(params[:page])
   end
 
   def create

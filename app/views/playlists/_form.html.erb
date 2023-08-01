@@ -1,9 +1,8 @@
 <%= bootstrap_form_with(model: @playlist, data: { action: "turbo:submit-end->modal#close" }) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="mt-4">
+  <div class="mt-4 text-border fs-5">
     <%= f.text_field :name, placeholder: (t 'defaults.placeholder_playlist') %>
   </div>
   <div class="text-center my-4">
-    <%= f.submit @playlist.persisted? ? (t 'defaults.update') : (t 'defaults.create'), class: 'btn btn-primary actions' %>
+    <%= f.submit 'OK', class: 'btn btn-primary actions' %>
   </div>
 <% end %>

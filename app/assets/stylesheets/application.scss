@@ -1,28 +1,27 @@
 @import "bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
-.nav-img {
-  width: 220px;
-}
 
 body {
   background-color: #fffefa;
+  font-family: 'Cherry Bomb One', cursive;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.how_to_list li {
-  margin: 20px 0px;
+//ホーム画面
+.home-title {
+  font-size: 40px;
+  text-shadow:
+  -1px -1px 0 #ffb710,  
+  1px -1px 0 #ffb710,
+  -1px 1px 0 #ffb710,
+  1px 1px 0 #ffb710;
+  color: #ffff60;
 }
 
-.actions {
-  width: 20%;
-}
-
-.nav-color {
-  background-color: rgb(249, 249, 216);
-}
-
+//入力フォーム
 .input-wrapper {
   position: relative;
 }
@@ -30,7 +29,7 @@ body {
 .input-icon {
   position: absolute;
   left: 20px;
-  top: calc(70% - 0.5em);
+  top: calc(70% - 0.4em);
 }
 
 .search-icon {
@@ -43,14 +42,26 @@ body {
   padding-left: 50px;
 }
 
-.bg-custom {
+//フォントを無効
+input, select, footer {
+  font-family: system-ui;
+}
+
+.no-font {
+  font-family: system-ui;
+}
+
+//ボタンの横幅
+.actions {
+  width: 80px;
+}
+
+//プロフィール画面
+.profile-card {
   background-color: rgb(249, 249, 216);
 }
 
-footer {
-  background-color: white;
-}
-
+//モーダル
 .modal-header {
   background-color: rgb(249, 249, 216);
 }
@@ -68,6 +79,111 @@ footer {
   max-height: calc(100% - 1rem);
 }
 
-.dlt {
-  background-color: rgb(255, 255, 234);
+//ログイン画面
+.line-separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #aaa;
+}
+
+.line-separator::before,
+.line-separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #aaa;
+}
+
+.line-separator::before {
+  margin-right: .5em;
+}
+
+.line-separator::after {
+  margin-left: .5em;
+}
+
+.text-border {
+  text-shadow:
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+  color: white;
+}
+
+.login-tab.nav-link.active {
+  background-color: #FAFF01;
+}
+
+.login-card {
+  background-color: #feffb854;
+}
+
+.nav-link.login-tab  {
+  padding: 15px 0px;
+  background-color: rgb(250, 250, 184);
+}
+
+.custom-link {
+  text-decoration: none;
+  color: #00BBE4;
+}
+
+//ヘッダー
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #fcbb4a;
+  border: solid 2px #fcbb4a;
+  background-color: rgb(249, 249, 216);
+}
+
+.btn-flat-border:hover {
+  background: #fcbb4a;
+  color: white;
+}
+
+.header-img {
+  width: 170px;
+}
+
+.nav-color {
+  background-color: rgb(249, 249, 216);
+}
+
+.add-btn {
+  color: rgb(90, 233, 255);
+}
+
+//フッター
+footer {
+  margin-top: auto;
+  margin-bottom: 50px;
+  background-color: white
+}
+
+//ナビゲーションボトム
+.bg-custom {
+  background-color: rgb(249, 249, 216);
+  padding-right: 0;
+}
+
+.btn-custom:hover {
+  background-color: rgb(90, 233, 255);
+  color: #FFF;
+}
+
+.bottom-nav.active {
+  background-color: #FAFF01;
+}
+
+//フラッシュメッセージ
+.flash {
+  font-family: system-ui;
+}
+
+//アラートメッセージ
+.alert {
+  font-family: system-ui;
 }

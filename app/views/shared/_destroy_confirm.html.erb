@@ -1,5 +1,5 @@
 <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal_<%= id %>">
-  <%= (t 'defaults.destroy')%>
+  Del
 </button>
 
 <div class="modal fade" id="exampleModal_<%= id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -9,11 +9,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body mt-2">
-        <p class="ms-3"><%= (t 'defaults.delete_message')%></p>
+        <p class="ms-3 text-border fs-5"><%= (t "defaults.delete_message")%></p>
       </div>
-      <div class="modal-footer rounded-bottom dlt" data-bs-dismiss="modal">
-        <%= link_to 'No', '#', class: "btn btn-secondary btn-sm" %>
-        <%= link_to 'YES', url, class: "btn btn-danger btn-sm", data: { turbo_method: :delete } %>
+      <div class="modal-footer rounded-bottom" data-bs-dismiss="modal">
+        <%= link_to "YES", url, class: "btn btn-danger btn-sm", data: { turbo_method: :delete } %>
+        <%= link_to "No", "#", class: "btn btn-secondary btn-sm" %>
       </div>
     </div>
   </div>

@@ -1,45 +1,44 @@
 ja:
   defaults:
     title: 'うぃずおけ。'
+    sign_in_with_google: 'Sign in with google'
+    forgot_password: 'Forgot password?'
     sign_up: '新規登録'
     login: 'ログイン'
     logout: 'ログアウト'
-    submit: '送る'
+    submit: 'おくる'
     decision: '決定'
     create: '作成'
     edit: '編集'
     update: '更新'
     destroy: '削除'
     cancel: 'キャンセル'
-    search: '検索'
-    settings: 'その他'
+    search: 'さがす'
+    settings: 'せってい'
     playlist: 'リスト'
     key: 'キー'
     original_key: '原曲キー'
     terms_of_service: '利用規約'
     privacy_policy: 'プライバシーポリシー'
-    placeholder: '曲名かアーティスト名で検索できます'
+    placeholder: '曲名またはアーティスト名で検索'
     logout_message: 'ログアウトしますか？'
-    delete_message: '削除しますか？'
+    delete_message: 'デリートしますか？'
     select_playlist: 'プレイリストを選択してください'
     require_login: 'ログインしてください。'
     select_key: 'キーを選択してください'
-    require_login: 'ログインしてください。' 
     placeholder_title: '曲名を入力してください'
     placeholder_artist: 'アーティスト名を入力してください'
     placeholder_playlist: 'プレイリスト名を入力してください'
+    placeholder_username: 'ユーザー名を入力してください'
     no_playlist: 'プレイリストがありません。'
-    new_playlist: 'プレイリストの作成はこちら'
+    no_song: 'プレイリスト内に楽曲がありません。'
+    new_playlist: 'あたらしくプレイリストをつくる'
   users:
     new:
       title: 'ユーザー登録'
-      have_account: 'アカウントを持っている方'
+    create:
+      success: 'アカウントの登録に成功しました'
   user_sessions:
-    new:
-      title: 'ログイン'
-      forgot_password: 'パスワードを忘れた方'
-      not_have_account: 'アカウントを持っていない方'
-      remember_me: '次回から自動的にログイン'
     create:
       success: 'ログインしました'
       fail: 'メールアドレスまたはパスワードが間違っています。'
@@ -48,13 +47,13 @@ ja:
   password_resets:
     new:
       title: 'パスワードリセット'
-      description: 'メールアドレス宛にパスワードリセットのURLが送られます。'
+      description: 'メールアドレスあてにパスワードリセットのURLがおくられます。'
     edit:
-      description: '新しいパスワードを入力してください。'
-      title: 'パスワード再設定'
-      fail: 'パスワードリセットの有効期限が切れています。'
+      description: 'あたらしいパスワードをきめてください。'
+      title: 'パスワードリセット'
+      fail: 'パスワードリセットのトークンがありません'
     create:
-      success: '入力されたメールアドレス宛にパスワード再設定のURLが送られました'
+      success: 'メールアドレスあてにパスワードリセットのURLがおくられました'
     update:
       success: 'パスワードの変更に成功しました。'
   playlists:
@@ -83,3 +82,12 @@ ja:
   scores:
     create:
       success: 'スコアを記録しました'
+  oauths:
+    callback:
+      success: 'ログインしました'
+      fail: 'ログインができませんでした'
+  profiles:
+    show:
+      title: 'プロフィール'
+    update:
+      success: 'ユーザー名を変更しました'

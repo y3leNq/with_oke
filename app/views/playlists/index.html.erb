@@ -1,18 +1,19 @@
 <div class="container">
   <div class="row">
-    <div class="col-8 offset-2">
-      <h2 class="text-center my-5"><%= t('.title') %></h2>
+    <div class="col-md-8 offset-md-2">
+      <h1 class="text-center text-border mt-5"><%= t('.title') %></h1>
 
-      <div class="d-flex justify-content-end">
-        <%= link_to t('.btn'), new_playlist_path, class: "btn btn-outline-success", data: { turbo_frame: "modal" }  %>
+      <div class="d-flex justify-content-end mt-3">
+        <%= link_to 'New', new_playlist_path, class: "btn btn-outline-info btn-custom", data: { turbo_frame: "modal" }  %>
       </div>
 
       <div id="playlists">
-        <% if @playlists.present? %>
-          <%= render @playlists %>
-        <% else %>
-          <%= render 'no_result' %>
-        <% end %>
+        <%= render @playlists %>
+        <p class="text-center no-font mt-5" id="no-result">
+          <% unless @playlists.present? %>
+            <%= (t 'defaults.no_playlist') %>
+          <% end %>
+        </p>
       </div>
     </div>
   </div>
