@@ -8,4 +8,4 @@ import "controllers"
 import "@fortawesome/fontawesome-free"
 import "chartkick"
 import "Chart.bundle"
-import "./login.js";
+import "./login_form.js";
