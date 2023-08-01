@@ -9,7 +9,7 @@
       </div>
       <div class="nav-item flex-grow-1 text-center border bottom-nav <%= "active" if request.path.start_with?(songs_path, search_path) %>">
         <%= link_to songs_path, class: "nav-link text-dark my-2" do %>
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="bi bi-search"></i>
           <p class="text-border mb-0"><%= (t 'defaults.search') %></p>
         <% end %>
       </div>
