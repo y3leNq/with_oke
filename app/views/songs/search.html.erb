@@ -1,15 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-10 offset-1 my-5">
-      <%= render 'search_form' %>
-      <%= turbo_frame_tag "itune-songs" do %>
-        <% if @songs.present? %>
-          <%= render partial: 'song', collection: @songs %>
-        <% else %>
-          <p class="text-center my-5">
-            <%= (t '.no_result') %>
-          </p>
-        <% end %>
+    <div class="col-md-8 offset-md-2 my-5">
+      <%= render "search_form" %>
+      <% if @songs.present? %>
+        <%= render partial: "song", collection: @songs %>
+      <% else %>
+        <p class="text-center my-5 no-font">
+          <%= (t '.no_result') %>
+        </p>
       <% end %>
     </div>
   </div>

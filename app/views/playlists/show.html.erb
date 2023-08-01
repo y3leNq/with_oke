@@ -1,25 +1,28 @@
 <div class="container">
   <div class="row">
-    <div class="col-8 offset-2 my-5">
+    <div class="col-md-8 offset-md-2 my-5">
+      <h2 class="text-center mb-4 no-font"><%= @playlist.name %></h2>
       <%= search_form_for @q, url: playlist_path(@playlist), html: { data: { turbo_frame: "songs-list", controller: "form", action: "input->form#submit" }} do |f| %>
         <div class="input-wrapper mb-4">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
-          <%= f.search_field :title_or_artist_cont, placeholder: (t 'defaults.placeholder'), class: 'form-control form-control-with-icon' %>
+          <%= f.search_field :title_or_artist_cont, placeholder: (t "defaults.placeholder"), class: "form-control form-control-with-icon mb-3" %>
         </div>
       <% end %>
-      <h2 class="text-center my-5 playlist-name"><%= @playlist.name %></h2>
       <%= turbo_frame_tag "songs-list" do %>
-        <% if @songs.present? %>
-          <th><%= sort_link(@q, :title) %></th>
-          <th><%= sort_link(@q, :artist) %></th>
-          <%= turbo_frame_tag "songs-page-#{@songs.current_page}" do %>
-            <% @songs.each do |song| %>
-              <%= render 'song', song: song, playlist: @playlist %>
-            <% end %>
+        <th><%= sort_link(@q, :title) %></th>
+        <th><%= sort_link(@q, :artist) %></th>
+        <%= turbo_frame_tag "songs-page-#{@songs.current_page}" do %>
+          <% @songs.each do |song| %>
+            <%= render "song", song: song, playlist: @playlist %>
           <% end %>
-          <%= turbo_frame_tag "songs-page-#{@songs.next_page}", loading: :lazy, src: path_to_next_page(@songs) %>
         <% end %>
+        <%= turbo_frame_tag "songs-page-#{@songs.next_page}", loading: :lazy, src: path_to_next_page(@songs) %>
       <% end %>
+      <p class="text-center no-font mt-5" id="no-song">
+        <% unless @songs.present? %>
+          <%= (t "defaults.no_song") %>
+        <% end %>
+      </p>
     </div>
   </div>
 </div>

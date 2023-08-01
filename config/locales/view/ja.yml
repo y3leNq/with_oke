@@ -31,6 +31,7 @@ ja:
     placeholder_playlist: 'プレイリスト名を入力してください'
     placeholder_username: 'ユーザー名を入力してください'
     no_playlist: 'プレイリストがありません。'
+    no_song: 'プレイリスト内に楽曲がありません。'
     new_playlist: 'あたらしくプレイリストをつくる'
   users:
     new:

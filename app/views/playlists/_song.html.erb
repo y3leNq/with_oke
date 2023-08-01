@@ -1,29 +1,33 @@
-<%= turbo_frame_tag song do %> 
+<%= turbo_frame_tag song do %>
   <ol class="list-group mt-2">
-      <li class="list-group-item">
-        <div class="card">
-          <div class="card-body position-relative">
+    <li class="list-group-item">
+      <div class="position-relative">
+        <div class="row">
+          <div class="col-6 mt-2">
+            <h5 class="no-font"><%= song.title %></h5>
+            <h6 class="mb-2 text-muted no-font"><%= song.artist %></h6>
+          </div>
+          <div class="col-6">
             <div class="row">
-              <div class="col-md-6 mt-2">
-                <h5 class="card-title"><%= song.title %></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><%= song.artist %></h6>
+              <div class="col-4 no-font p-0">
+                <p><%= (t "defaults.key") %>: <%= song.playlist_songs.where(playlist_id: playlist).first.key %></p>
               </div>
-              <div class="col-md-6">
-                <p class="card-text">Key: <%= song.playlist_songs[0].key %></p>
+              <div class="col-8 no-font p-0">
                 <% if current_user.scores.where(song_id: song.id).any? %>
-                  <p class="card-text">Score: <%= highest_score(song) %></p>
+                  <p><%= Score.model_name.human %>: <%= highest_score(song) %></p>
                 <% else %>
-                  <p class="card-text">Score: -</p>
+                  <p><%= Score.model_name.human %>: -</p>
                 <% end %>
               </div>
             </div>
-            <div class="position-absolute bottom-0 end-0 mb-2 me-2">
-              <%= link_to (t 'defaults.edit'), edit_playlist_song_path(playlist, song), class: "btn btn-success btn-sm", data: { turbo_frame: "modal" } %>
-              <%= link_to Score.model_name.human, new_song_score_path(song), class: "btn btn-warning btn-sm text-white", data: { turbo_frame: "_top" } %>
-              <%= render partial: 'shared/destroy_confirm', locals: { url: playlist_song_path(playlist, song), id: song.id } %>
-            </div>
           </div>
         </div>
-      </li>
+        <div class="position-absolute bottom-0 end-0">
+          <%= link_to "Edit", edit_playlist_song_path(playlist, song), class: "btn btn-success btn-sm", data: { turbo_frame: "modal" } %>
+          <%= link_to "Score", new_song_score_path(song), class: "btn btn-warning btn-sm text-white", data: { turbo_frame: "_top" } %>
+          <%= render partial: "shared/destroy_confirm", locals: { url: playlist_song_path(playlist, song), id: song.id } %>
+        </div>
+      </div>
+    </li>
   </ol>
 <% end %>

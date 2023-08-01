@@ -1,2 +1,3 @@
 <%= turbo_stream.remove @song %>
+<%= turbo_stream.update "no-song", (t "defaults.no_song") unless @playlist.songs.present? %>
 <%= turbo_stream_flash %>

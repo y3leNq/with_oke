@@ -9,9 +9,9 @@
 
       <div id="playlists">
         <%= render @playlists %>
-        <p class="text-center text-border fs-5 my-5" id="no-result">
+        <p class="text-center no-font mt-5" id="no-result">
           <% unless @playlists.present? %>
-            <%= t('defaults.no_playlist') %>
+            <%= (t 'defaults.no_playlist') %>
           <% end %>
         </p>
       </div>
