@@ -10,6 +10,17 @@ body {
   min-height: 100vh;
 }
 
+//ホーム画面
+.home-title {
+  font-size: 40px;
+  text-shadow:
+  -1px -1px 0 #ffb710,  
+  1px -1px 0 #ffb710,
+  -1px 1px 0 #ffb710,
+  1px 1px 0 #ffb710;
+  color: #ffff60;
+}
+
 //入力フォーム
 .input-wrapper {
   position: relative;
@@ -43,11 +54,6 @@ input, select, footer {
 //ボタンの横幅
 .actions {
   width: 80px;
-}
-
-//ホーム画面
-.how_to_list li {
-  margin: 20px 0px;
 }
 
 //プロフィール画面
