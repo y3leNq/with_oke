@@ -6,11 +6,11 @@ class SongsController < ApplicationController
   def new
     @song = Song.new
 
-    if params[:track_id].present?
-      track_info = Song.lookup(params[:track_id])
-      @song.title = track_info[0]['trackName']
-      @song.artist = track_info[0]['artistName']
-    end
+    return unless params[:track_id].present?
+
+    track_info = Song.lookup(params[:track_id])
+    @song.title = track_info[0]['trackName']
+    @song.artist = track_info[0]['artistName']
   end
 
   def create
@@ -35,7 +35,8 @@ class SongsController < ApplicationController
   end
 
   def update
-    if @song.update(song_params.except(:playlist_id, :key)) && @song.playlist_songs.update(playlist_id: params[:song][:playlist_id], key: params[:song][:key])
+    if @song.update(song_params.except(:playlist_id, :key)) &&
+       @song.playlist_songs.update(playlist_id: params[:song][:playlist_id], key: params[:song][:key])
       flash.now[:info] = (t '.success')
     else
       render :edit, status: :unprocessable_entity
@@ -50,7 +51,7 @@ class SongsController < ApplicationController
   def search
     if params[:search].present?
       result = Song.search(params[:search])
-      @songs = result.uniq { |song| [song["trackName"], song["artistName"]] }
+      @songs = result.uniq { |song| [song['trackName'], song['artistName']] }
     else
       @songs = []
     end

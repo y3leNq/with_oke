@@ -12,10 +12,10 @@ class PasswordResetsController < ApplicationController
   def edit
     @token = params[:id]
     @user = User.load_from_reset_password_token(params[:id])
-    if @user.blank?
-      flash[:danger] = (t '.fail')
-      redirect_to root_path
-    end
+    return unless @user.blank?
+
+    flash[:danger] = (t '.fail')
+    redirect_to root_path
   end
 
   def update

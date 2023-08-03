@@ -2,7 +2,8 @@ class ScoresController < ApplicationController
   def new
     @song = Song.find(params[:song_id])
     @score = Score.new
-    @chart = @song.scores.group_by { |score| score.key.to_s }.to_h.transform_values { |scores| scores.max_by(&:score).score }.sort_by { |key, _| key.to_f }
+    hash = @song.scores.group_by { |score| score.key.to_s }.to_h
+    @chart = hash.transform_values { |scores| scores.max_by(&:score).score }.sort_by { |key, _| key.to_f }
   end
 
   def create
