@@ -10,6 +10,14 @@ body {
   min-height: 100vh;
 }
 
+.artistname {
+  font-size: 12px;
+}
+
+.song-card {
+background-color: rgb(255, 255, 248);
+}
+
 //ホーム画面
 .home-title {
   font-size: 40px;
@@ -153,7 +161,7 @@ input, select, footer {
 }
 
 .add-btn {
-  color: rgb(90, 233, 255);
+  color: rgb(255, 199, 16);
 }
 
 //フッター

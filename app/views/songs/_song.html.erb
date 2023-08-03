@@ -1,19 +1,20 @@
-<ol class="list-group mt-2">
-  <li class="list-group-item align-items-start d-flex">
-    <%= image_tag song["artworkUrl100"], class: "float-start me-5" %>
+<ol class="list-group mt-1">
+  <li class="list-group-item align-items-start d-flex song-card">
+    <%= image_tag song["artworkUrl60"], class: "float-start me-3 mt-1" %>
     <div class="no-font">
-      <h4 class="mt-3">
+      <h6 class="mb-1">
         <%= song["trackName"] %>
-      </h4>
-      <p>
+      </h6>
+      <p class="artistname mb-0">
         <%= song["artistName"] %>
       </p>
+      <audio id="audio-<%= song["trackId"] %>" src="<%= song["previewUrl"] %>"></audio>
+      <i class="fa-solid fa-circle-play play-icon" data-id="<%= song["trackId"] %>" style="color: #ffba24;"></i>
     </div>
     <div class="ms-auto align-self-center">
-      <%= link_to new_song_path(track_id: song["trackId"]), class: "fs-1 me-3 add-btn", data: { turbo_frame: "modal" } do %>
+      <%= link_to new_song_path(track_id: song["trackId"]), class: "fs-2 me-1 add-btn", data: { turbo_frame: "modal" } do %>
         <i class="fa-solid fa-circle-plus"></i>
       <% end %>
     </div>
   </li>
 </ol>
-
