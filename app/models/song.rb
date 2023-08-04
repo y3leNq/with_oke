@@ -2,12 +2,12 @@
 #
 # Table name: songs
 #
-#  id         :bigint           not null, primary key
-#  artist     :string           not null
-#  title      :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  itunes_id  :string
+#  id          :bigint           not null, primary key
+#  artist      :string           not null
+#  preview_url :string
+#  title       :string           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 class Song < ApplicationRecord
   require_relative '../../lib/itunes_search_api'
