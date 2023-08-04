@@ -11,6 +11,7 @@ class SongsController < ApplicationController
     track_info = Song.lookup(params[:track_id])
     @song.title = track_info[0]['trackName']
     @song.artist = track_info[0]['artistName']
+    @song.preview_url = track_info[0]['previewUrl']
   end
 
   def create
@@ -60,7 +61,7 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:artist, :title, :key, :playlist_id)
+    params.require(:song).permit(:artist, :title, :key, :playlist_id, :preview_url)
   end
 
   def set_song
