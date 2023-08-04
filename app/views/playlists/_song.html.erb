@@ -1,11 +1,15 @@
 <%= turbo_frame_tag song do %>
   <ol class="list-group mt-2">
-    <li class="list-group-item">
+    <li class="list-group-item list-card">
       <div class="position-relative">
         <div class="row">
-          <div class="col-6 mt-2">
-            <h5 class="no-font"><%= song.title %></h5>
-            <h6 class="mb-2 text-muted no-font"><%= song.artist %></h6>
+          <div class="col-6">
+            <h6 class="no-font songname mb-0"><%= song.title %></h6>
+            <p class="no-font artistname mb-0"><%= song.artist %></p>
+            <% if song.preview_url.present? %>
+              <audio id="audio-<%= song.id %>" src="<%= song.preview_url %>"></audio>
+              <i class="fa-solid fa-circle-play play-icon" data-id="<%= song.id %>" style="color: #ffba24;"></i>
+            <% end %>
           </div>
           <div class="col-6">
             <div class="row">
