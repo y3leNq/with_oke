@@ -12,8 +12,10 @@
       </div>
     </div>
     <div class="ms-auto align-self-center d-flex">
-      <i class="fa-solid fa-circle-play play-icon fs-5 mt-2 pt-1 me-3" data-id="<%= top_song.id %>" style="color: #ffba24;"></i>
-      <%= link_to new_song_path, class: "fs-3 me-1 add-btn", data: { turbo_frame: "modal" } do %>
+      <% if top_song.preview_url.present? %>
+        <i class="fa-solid fa-circle-play play-icon fs-5 mt-2 pt-1 me-3" data-id="<%= top_song.id %>" style="color: #ffba24;"></i>
+      <% end %>
+      <%= link_to new_song_path(song_id: top_song), class: "fs-3 me-1 add-btn", data: { turbo_frame: "modal" } do %>
         <i class="fa-solid fa-circle-plus"></i>
       <% end %>
     </div>

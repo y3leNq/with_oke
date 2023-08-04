@@ -2,18 +2,21 @@ class SongsController < ApplicationController
   before_action :set_song, only: %i[show edit update destroy]
 
   def index
-    @top_songs = Song.top_songs
+    @songs = Song.top_songs
   end
 
   def new
     @song = Song.new
 
-    return unless params[:track_id].present?
-
-    track_info = Song.lookup(params[:track_id])
-    @song.title = track_info[0]['trackName']
-    @song.artist = track_info[0]['artistName']
-    @song.preview_url = track_info[0]['previewUrl']
+    if params[:track_id].present?
+      track_info = Song.lookup(params[:track_id])
+      @song.title = track_info[0]['trackName'] || 
+      @song.artist = track_info[0]['artistName']
+      @song.preview_url = track_info[0]['previewUrl']
+    elsif params[:song_id].present?
+      @song.title = Song.find(params[:song_id]).title
+      @song.artist = Song.find(params[:song_id]).artist
+    end
   end
 
   def create

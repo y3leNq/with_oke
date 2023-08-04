@@ -37,4 +37,12 @@ class User < ApplicationRecord
 
   validates :name, :email, presence: true
   validates :email, uniqueness: true
+
+  def is_score?(song)
+    self.scores.where(song: song).exists?
+  end
+
+  def max_score(song)
+    self.scores.where(song: song).maximum(:score)
+  end
 end

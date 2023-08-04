@@ -10,11 +10,11 @@
           <div class="col-6">
             <div class="row">
               <div class="col-4 no-font p-0">
-                <p><%= (t "defaults.key") %>: <%= song.playlist_songs.where(playlist_id: playlist).first.key %></p>
+                <p><%= (t "defaults.key") %>: <%= song.set_key(playlist) %></p>
               </div>
               <div class="col-8 no-font p-0">
-                <% if current_user.scores.where(song_id: song.id).any? %>
-                  <p><%= Score.model_name.human %>: <%= highest_score(song) %></p>
+                <% if current_user.is_score?(song) %>
+                  <p><%= Score.model_name.human %>: <%= current_user.max_score(song) %></p>
                 <% else %>
                   <p><%= Score.model_name.human %>: -</p>
                 <% end %>

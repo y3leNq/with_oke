@@ -39,4 +39,8 @@ class Song < ApplicationRecord
     top_songs = PlaylistSong.group(:song_id).order('count_song_id DESC').limit(10).count(:song_id)
     top_songs.keys.map { |key| Song.find(key) }
   end
+
+  def set_key(playlist)
+    self.playlist_songs.where(playlist_id: playlist).first.key
+  end
 end
