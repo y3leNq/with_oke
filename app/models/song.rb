@@ -34,4 +34,9 @@ class Song < ApplicationRecord
   def self.ransackable_associations(_auth_object = nil)
     %w[playlist_songs playlists scores]
   end
+
+  def self.top_songs
+    top_songs = PlaylistSong.group(:song_id).order('count_song_id DESC').limit(10).count(:song_id)
+    top_songs.keys.map { |key| Song.find(key) }
+  end
 end
