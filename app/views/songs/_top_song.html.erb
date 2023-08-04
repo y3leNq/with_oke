@@ -1,0 +1,22 @@
+<ol class="list-group mt-2">
+  <li class="list-group-item align-items-start d-flex list-card">
+    <div class="d-flex align-items-center">
+      <div class="no-font">
+        <h6 class="mb-1">
+          <%= top_song.title %>
+        </h6>
+        <p class="artistname mb-0">
+          <%= top_song.artist %>
+        </p>
+        <audio id="audio-<%= top_song.id %>" src="<%= top_song.preview_url %>"></audio>
+      </div>
+    </div>
+    <div class="ms-auto align-self-center d-flex">
+      <i class="fa-solid fa-circle-play play-icon fs-5 mt-2 pt-1 me-3" data-id="<%= top_song.id %>" style="color: #ffba24;"></i>
+      <%= link_to new_song_path, class: "fs-3 me-1 add-btn", data: { turbo_frame: "modal" } do %>
+        <i class="fa-solid fa-circle-plus"></i>
+      <% end %>
+    </div>
+  </li>
+</ol>
+

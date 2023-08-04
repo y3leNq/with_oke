@@ -2,12 +2,12 @@
 #
 # Table name: songs
 #
-#  id         :bigint           not null, primary key
-#  artist     :string           not null
-#  title      :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  itunes_id  :string
+#  id          :bigint           not null, primary key
+#  artist      :string           not null
+#  preview_url :string
+#  title       :string           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 class Song < ApplicationRecord
   require_relative '../../lib/itunes_search_api'
@@ -33,5 +33,10 @@ class Song < ApplicationRecord
 
   def self.ransackable_associations(_auth_object = nil)
     %w[playlist_songs playlists scores]
+  end
+
+  def self.top_songs
+    top_songs = PlaylistSong.group(:song_id).order('count_song_id DESC').limit(10).count(:song_id)
+    top_songs.keys.map { |key| Song.find(key) }
   end
 end
