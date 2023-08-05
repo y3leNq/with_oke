@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 offset-md-2 my-5">
-      <h2 class="text-center mb-4 no-font"><%= @playlist.name %></h2>
+      <h2 class="text-center mb-4 potta-one"><%= @playlist.name %></h2>
       <%= search_form_for @q, url: playlist_path(@playlist), html: { data: { turbo_frame: "songs-list", controller: "form", action: "input->form#submit" }} do |f| %>
         <div class="input-wrapper mb-4">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>

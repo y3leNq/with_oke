@@ -10,6 +10,17 @@ body {
   min-height: 100vh;
 }
 
+.potta-one {
+  font-family: 'Potta One', cursive;
+  text-shadow:
+  -1px -1px 0 #ffb710,  
+  1px -1px 0 #ffb710,
+  -1px 1px 0 #ffb710,
+  1px 1px 0 #ffb710;
+  color: #ffffff;
+}
+
+//リスト
 .artistname {
   font-size: 12px;
 }
@@ -18,9 +29,22 @@ body {
   font-size: 16px;
 }
 
+.playlistname:hover {
+  text-shadow:
+  -1px -1px 0 #ffb710,  
+  1px -1px 0 #ffb710,
+  -1px 1px 0 #ffb710,
+  1px 1px 0 #ffb710;
+  color: #ffffda;
+}
+
 .list-card {
   background-color: rgb(255, 255, 233);
   border: 2px solid #ffb710;
+}
+
+.fs-key-score {
+  font-size: 15px;
 }
 
 //ホーム画面

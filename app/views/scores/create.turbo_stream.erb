@@ -1,0 +1,5 @@
+<%= turbo_stream.update "chart" do %>
+  <%= line_chart @chart, xtitle: Score.human_attribute_name(:key), ytitle: Score.human_attribute_name(:score), height: "200px" %>
+<% end %>
+
+<%= turbo_stream_flash %>

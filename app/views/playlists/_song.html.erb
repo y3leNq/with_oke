@@ -3,20 +3,22 @@
     <li class="list-group-item list-card">
       <div class="position-relative">
         <div class="row">
-          <div class="col-6">
-            <h6 class="no-font songname mb-0"><%= song.title %></h6>
-            <p class="no-font artistname mb-0"><%= song.artist %></p>
+          <div class="col-6 potta-one">
+            <h6 class="songname mb-0"><%= song.title %></h6>
+            <p class="artistname mb-0"><%= song.artist %></p>
             <% if song.preview_url.present? %>
               <audio id="audio-<%= song.id %>" src="<%= song.preview_url %>"></audio>
               <i class="fa-solid fa-circle-play play-icon" data-id="<%= song.id %>" style="color: #ffba24;"></i>
+            <% else %>
+              <i class="fa-solid fa-circle fa-fw" style="color: transparent;"></i>
             <% end %>
           </div>
           <div class="col-6">
-            <div class="row">
-              <div class="col-4 no-font p-0">
+            <div class="row potta-one fs-key-score">
+              <div class="col-4 p-0">
                 <p><%= (t "defaults.key") %>: <%= song.set_key(playlist) %></p>
               </div>
-              <div class="col-8 no-font p-0">
+              <div class="col-8 p-0">
                 <% if current_user.is_score?(song) %>
                   <p><%= Score.model_name.human %>: <%= current_user.max_score(song) %></p>
                 <% else %>
@@ -28,7 +30,7 @@
         </div>
         <div class="position-absolute bottom-0 end-0">
           <%= link_to "Edit", edit_playlist_song_path(playlist, song), class: "btn btn-success btn-sm", data: { turbo_frame: "modal" } %>
-          <%= link_to "Score", new_song_score_path(song), class: "btn btn-warning btn-sm text-white", data: { turbo_frame: "_top" } %>
+          <%= link_to "Score", new_song_score_path(song), class: "btn btn-warning btn-sm text-white", data: { turbo_frame: "modal" } %>
           <%= render partial: "shared/destroy_confirm", locals: { url: playlist_song_path(playlist, song), id: song.id } %>
         </div>
       </div>

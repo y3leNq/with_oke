@@ -10,7 +10,7 @@ class SongsController < ApplicationController
 
     if params[:track_id].present?
       track_info = Song.lookup(params[:track_id])
-      @song.title = track_info[0]['trackName'] || 
+      @song.title = track_info[0]['trackName']
       @song.artist = track_info[0]['artistName']
       @song.preview_url = track_info[0]['previewUrl']
     elsif params[:song_id].present?
@@ -36,17 +36,15 @@ class SongsController < ApplicationController
 
   def show; end
 
-  def edit
-    @playlist_song = @song.playlist_songs.find_by(playlist_id: @playlist.id)
-  end
+  def edit; end
 
   def update
-    if @song.update(song_params.except(:playlist_id, :key)) &&
-       @song.playlist_songs.update(playlist_id: params[:song][:playlist_id], key: params[:song][:key])
+    if @song.update(song_params.except(:playlist_id, :key)) && @song.playlist_songs.update(key: params[:song][:key])
       flash.now[:info] = (t '.success')
     else
       render :edit, status: :unprocessable_entity
     end
+
   end
 
   def destroy

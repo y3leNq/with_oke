@@ -1,24 +1,29 @@
-<div class="container">
-  <div class="row">
-    <div class="mt-5">
-      <%= line_chart @chart, xtitle: Score.human_attribute_name(:key), ytitle: Score.human_attribute_name(:score) %>
-    </div>
-    <div class="col-md-8 offset-md-2">
-      <h3 class="text-center my-4 no-font"><%= @song.artist %> / <%= @song.title %></h3>
-      <%= form_with model: [@song, @score] do |f| %>
-        <%= render 'shared/error_messages', object: f.object %> 
-        <div class="col-3 ms-4 mb-3">
-          <%= f.label :score, class: 'form-label text-border fs-5' %>
-          <%= f.number_field :score, step: :any, placeholder: "100.00", class: "form-control" %>
-        </div>
-        <div class="col-3 mb-4 ms-4">
-          <%= f.label :key, class: 'form-label text-border fs-5' %>
-          <%= f.select :key, options_for_select((-6..6).map { |n| [n == 0? '原キー' : (n > 0 ? "+#{n}" : n), n] }, selected: 0), {}, class: "form-select" %>
-        </div>
-        <div class="text-center mt-3 mb-5">
-          <%= f.submit "OK", class: "btn btn-primary actions" %>
-        </div>
+<%= render "shared/modal" do %>
+  <div class="container">
+    <div class="row">
+      <%= turbo_frame_tag "chart" do %>
+          <%= line_chart @chart, xtitle: Score.human_attribute_name(:key), ytitle: Score.human_attribute_name(:score), height: "200px" %>
       <% end %>
+      <div class="col-md-10 offset-md-1">
+        <div class="text-center potta-one">
+          <p class="fs-2 mb-0"><%= @song.title %></p>
+          <p class="mb-0"><%= @song.artist %></p>
+        </div>
+        <%= form_with model: [@song, @score] do |f| %>
+          <%= render 'shared/error_messages', object: f.object %> 
+          <div class="col-4 mb-3">
+            <%= f.label :score, class: 'form-label text-border fs-5' %>
+            <%= f.number_field :score, step: :any, placeholder: "100.00", class: "form-control" %>
+          </div>
+          <div class="col-4 mb-4">
+            <%= f.label :key, class: 'form-label text-border fs-5' %>
+            <%= f.select :key, options_for_select((-6..6).map { |n| [n == 0? '原キー' : (n > 0 ? "+#{n}" : n), n] }, selected: 0), {}, class: "form-select" %>
+          </div>
+          <div class="text-center my-3">
+            <%= f.submit "OK", class: "btn btn-primary actions" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>

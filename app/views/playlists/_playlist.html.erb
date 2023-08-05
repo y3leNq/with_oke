@@ -1,7 +1,7 @@
 <%= turbo_frame_tag playlist do %>
   <div class="list-group">
     <div class="list-group-item rounded mt-2 py-4 d-flex justify-content-between list-card">
-      <%= link_to playlist_path(playlist), data: { turbo_frame: "_top" }, class: "ms-3 fs-4 text-decoration-none text-black no-font" do %>
+      <%= link_to playlist_path(playlist), data: { turbo_frame: "_top" }, class: "ms-3 fs-4 text-decoration-none potta-one playlistname" do %>
         <%= playlist.name %>
       <% end %>
       <div class="position-absolute bottom-0 end-0 mb-2 me-2">
