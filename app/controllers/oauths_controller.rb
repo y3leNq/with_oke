@@ -10,20 +10,13 @@ class OauthsController < ApplicationController
 
   def callback
     provider = params[:provider]
-    @user = login_from(provider)
-    if @user
+    if @user = login_from(provider)
       redirect_to root_path, info: (t '.success')
     else
-      begin
-        @user = create_from(provider)
-        # NOTE: this is the place to add '@user.activate!' if you are using user_activation submodule
-
-        reset_session # protect from session fixation attack
-        auto_login(@user)
-        redirect_to root_path, info: (t '.success')
-      rescue StandardError
-        redirect_to root_path, danger: (t '.fail')
-      end
+      @user = create_from(provider)
+      reset_session
+      auto_login(@user)
+      redirect_to edit_user_path
     end
   end
 end

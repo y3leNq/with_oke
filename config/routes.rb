@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'oauth/callback', to: 'oauths#callback'
   get 'oauth/:provider', to: 'oauths#oauth', as: :auth_at_provider
 
+  resource :user, only: %i[edit update]
   resource :profile, only: %i[show edit update]
   resources :password_resets, only: %i[new create edit update]
   resources :songs, only: %i[index new create] do

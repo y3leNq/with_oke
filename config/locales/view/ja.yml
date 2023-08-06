@@ -38,6 +38,11 @@ ja:
       title: 'ユーザー登録'
     create:
       success: 'アカウントの登録に成功しました'
+    edit:
+      title: 'ユーザーネーム'
+      description: 'ユーザーネームをきめてください'
+    update:
+      success: 'アカウントの登録に成功しました'
   user_sessions:
     create:
       success: 'ログインしました'

@@ -1,8 +1,19 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
+  before_action :set_user, only: %i[edit update]
 
   def new
     @user = User.new
+  end
+
+  def edit; end
+
+  def update
+    if @user.update(user_params.except(:email, :password, :password_confirmation))
+      redirect_to root_path, info: (t '.success')
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def create
@@ -16,6 +27,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def set_user
+    @user = User.find(current_user.id)
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
