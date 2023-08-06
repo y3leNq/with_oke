@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-8 offset-2">
+    <div class="col-md-8 offset-md-2">
       <h1 class="text-center my-5 text-border"><%= t('.title') %></h2>
       <p class="text-center mb-5 text-border fs-5"><%= t('.description') %></p>
       <%= form_with url: password_resets_path, local: true do |f| %>
@@ -10,7 +10,7 @@
           <%= f.email_field :email, class: 'form-control rounded-pill form-control-with-icon' %>
         </div>
         <div class="text-center pt-3 mb-5">
-          <%= f.submit 'OK', class: 'btn btn-primary' %>
+          <%= f.submit 'OK', class: 'btn btn-primary actions' %>
         </div>
       <% end %>
     </div>
