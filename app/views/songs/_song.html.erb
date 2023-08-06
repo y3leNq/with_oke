@@ -1,4 +1,4 @@
-<ol class="list-group mt-2">
+<ol class="list-group mt-2" data-controller="preview">
   <li class="list-group-item align-items-start d-flex list-card">
     <%= image_tag song["artworkUrl60"], class: "float-start me-3 mt-1" %>
     <div class="potta-one">
@@ -8,8 +8,8 @@
       <p class="artistname mb-0">
         <%= song["artistName"] %>
       </p>
-      <audio id="audio-<%= song["trackId"] %>" src="<%= song["previewUrl"] %>"></audio>
-      <i class="fa-solid fa-circle-play play-icon" data-id="<%= song["trackId"] %>" style="color: #ffba24;"></i>
+      <audio src="<%= song["previewUrl"] %>" data-preview-target="audio"></audio>
+      <i class="fa-solid fa-circle-play play-icon" style="color: #ffba24;" data-preview-target="icon" data-action="click->preview#play"></i>
     </div>
     <div class="ms-auto align-self-center">
       <%= link_to new_song_path(track_id: song["trackId"]), class: "fs-2 me-1 add-btn", data: { turbo_frame: "modal" } do %>

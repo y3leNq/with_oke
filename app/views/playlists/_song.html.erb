@@ -1,5 +1,5 @@
 <%= turbo_frame_tag song do %>
-  <ol class="list-group mt-2">
+  <ol class="list-group mt-2" data-controller="preview">
     <li class="list-group-item list-card">
       <div class="position-relative">
         <div class="row">
@@ -7,8 +7,8 @@
             <h6 class="songname mb-0"><%= song.title %></h6>
             <p class="artistname mb-0"><%= song.artist %></p>
             <% if song.preview_url.present? %>
-              <audio id="audio-<%= song.id %>" src="<%= song.preview_url %>"></audio>
-              <i class="fa-solid fa-circle-play play-icon" data-id="<%= song.id %>" style="color: #ffba24;"></i>
+              <audio src="<%= song.preview_url %>" data-preview-target="audio"></audio>
+              <i class="fa-solid fa-circle-play play-icon" style="color: #ffba24;" data-action="click->preview#play" data-preview-target="icon"></i>
             <% else %>
               <i class="fa-solid fa-circle fa-fw" style="color: transparent;"></i>
             <% end %>

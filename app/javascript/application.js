@@ -9,4 +9,3 @@ import "@fortawesome/fontawesome-free"
 import "chartkick"
 import "Chart.bundle"
 import "./login_form.js";
-import "./preview.js";

@@ -1,4 +1,4 @@
-<ol class="list-group mt-2">
+<ol class="list-group mt-2" data-controller="preview">
   <li class="list-group-item align-items-start d-flex list-card">
     <div class="d-flex align-items-center">
       <div class="potta-one">
@@ -8,12 +8,12 @@
         <p class="artistname mb-0">
           <%= top_song.artist %>
         </p>
-        <audio id="audio-<%= top_song.id %>" src="<%= top_song.preview_url %>"></audio>
+        <audio src="<%= top_song.preview_url %>" data-preview-target="audio"></audio>
       </div>
     </div>
     <div class="ms-auto align-self-center d-flex">
       <% if top_song.preview_url.present? %>
-        <i class="fa-solid fa-circle-play play-icon fs-5 mt-2 pt-1 me-3" data-id="<%= top_song.id %>" style="color: #ffba24;"></i>
+        <i class="fa-solid fa-circle-play play-icon fs-5 mt-2 pt-1 me-3" style="color: #ffba24;" data-action="click->preview#play" data-preview-target="icon"></i>
       <% end %>
       <%= link_to new_song_path(song_id: top_song), class: "fs-3 me-1 add-btn", data: { turbo_frame: "modal" } do %>
         <i class="fa-solid fa-circle-plus"></i>
@@ -21,4 +21,3 @@
     </div>
   </li>
 </ol>
-
