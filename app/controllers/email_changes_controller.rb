@@ -5,7 +5,7 @@ class EmailChangesController < ApplicationController
     @user = User.find(current_user.id)
     @user.unconfirmed_email = params[:unconfirmed_email]
     @user.email_token = SecureRandom.hex(10)
-    @user.email_token_expires_at = 1.day.from_now
+    @user.email_token_expires_at = 1.hour.from_now
     if @user.save
       UserMailer.change_email(@user).deliver_now
       redirect_to profile_path, info: (t '.success')
