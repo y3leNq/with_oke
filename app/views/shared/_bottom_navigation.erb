@@ -15,7 +15,7 @@
       </div>
       <div class="nav-item flex-grow-1 text-center border bottom-nav <%= "active" if current_page?(profile_path) %>">
         <%= link_to profile_path, class: "nav-link text-dark my-2" do %>
-          <i class="bi bi-person-fill-gear fs-5"></i>
+          <i class="fa-solid fa-user"></i>
           <p class="text-border mb-0"><%= User.model_name.human %></p>
         <% end %>
       </div>
