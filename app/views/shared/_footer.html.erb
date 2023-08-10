@@ -3,10 +3,13 @@
     <div class="border-top border-dark">
       <ul class="nav justify-content-center mt-2">
         <li class="nav-item">
-          <%= link_to (t 'defaults.terms_of_service'), '#', class: 'nav-link text-dark' %>
+          <%= link_to (t 'defaults.terms_of_service'), terms_of_services_path, class: 'nav-link text-dark' %>
         </li>
         <li class="nav-item">
-          <%= link_to (t 'defaults.privacy_policy'), '#', class: 'nav-link text-dark' %>
+          <%= link_to (t 'defaults.privacy_policy'), privacy_policies_path, class: 'nav-link text-dark' %>
+        </li>
+        <li class="nav-item">
+          <a href="https://forms.gle/R5M83TfYEurHTqUk9" class="nav-link text-dark"><%= (t 'defaults.contact') %></a>
         </li>
       </ul>
       <div>
