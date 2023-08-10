@@ -8,12 +8,12 @@
         <div class="input-wrapper mb-4">
           <i class="fa-solid fa-unlock-keyhole input-icon"></i>
           <%= f.label :password, class: 'form-label text-border fs-5' %>
-          <%= f.password_field :password, class: 'form-control rounded-pill form-control-with-icon' %>
+          <%= f.password_field :password, class: 'form-control rounded-pill form-control-with-icon', required: true %>
         </div>
         <div class="input-wrapper mb-4">
           <i class="fa-solid fa-unlock-keyhole input-icon"></i>
           <%= f.label :password_confirmation, class: 'form-label text-border fs-5' %>
-          <%= f.password_field :password_confirmation, class: 'form-control rounded-pill form-control-with-icon' %>
+          <%= f.password_field :password_confirmation, class: 'form-control rounded-pill form-control-with-icon', required: true %>
         </div>
         <div class="text-center pt-3 mb-5">
           <%= f.submit 'OK', class: 'btn btn-primary' %>

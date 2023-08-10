@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   resources :songs, only: %i[index new create] do
     resources :scores
   end
+  resources :email_changes, only: [:new, :create] do
+    get 'update', to: 'email_changes#update', on: :member
+  end
 
   resources :playlists do
     resources :songs, only: %i[edit update destroy show]

@@ -6,6 +6,8 @@
 #  access_count_to_reset_password_page :integer          default(0)
 #  crypted_password                    :string
 #  email                               :string           not null
+#  email_token                         :string
+#  email_token_expires_at              :datetime
 #  name                                :string           not null
 #  remember_me_token                   :string
 #  remember_me_token_expires_at        :datetime
@@ -13,6 +15,7 @@
 #  reset_password_token                :string
 #  reset_password_token_expires_at     :datetime
 #  salt                                :string
+#  unconfirmed_email                   :string
 #  created_at                          :datetime         not null
 #  updated_at                          :datetime         not null
 #
@@ -44,5 +47,13 @@ class User < ApplicationRecord
 
   def max_score(song)
     self.scores.where(song: song).maximum(:score)
+  end
+
+  def email_change
+    self.email = unconfirmed_email
+    self.unconfirmed_email = nil
+    self.email_token = nil
+    self.email_token_expires_at = nil
+    save
   end
 end
