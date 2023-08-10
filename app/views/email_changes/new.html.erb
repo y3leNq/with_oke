@@ -1,0 +1,18 @@
+<%= render "shared/modal" do %>
+  <div class="container">
+    <div class="row">
+      <div class="col-10 offset-1">
+        <%= form_with url: email_changes_path do |f| %>
+          <div class="input-wrapper my-3">
+            <i class="fa-solid fa-envelope input-icon"></i>
+            <%= f.label :unconfirmed_email, User.human_attribute_name(:email), class: 'form-label text-border fs-5' %>
+            <%= f.email_field :unconfirmed_email, class: 'form-control rounded-pill form-control-with-icon' %>
+          </div>
+          <div class="text-center pt-3 mb-4">
+            <%= f.submit 'OK', class: 'btn btn-primary actions', data: { turbo_frame: "_top" } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

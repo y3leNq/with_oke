@@ -33,6 +33,8 @@ ja:
     no_playlist: 'プレイリストがありません。'
     no_song: 'プレイリスト内に楽曲がありません。'
     new_playlist: 'あたらしくプレイリストをつくる'
+    password_reset: 'パスワードの再設定'
+    email_change: 'メールアドレスの変更'
   users:
     new:
       title: 'ユーザー登録'
@@ -56,9 +58,9 @@ ja:
     edit:
       description: 'あたらしいパスワードをきめてください。'
       title: 'パスワードリセット'
-      fail: 'パスワードリセットのトークンがありません'
+      fail: 'パスワードリセットの有効期限が切れました'
     create:
-      success: 'メールアドレスあてにパスワードリセットのURLがおくられました'
+      success: 'メールアドレス宛にパスワードリセットのURLがおくられました'
     update:
       success: 'パスワードの変更に成功しました。'
   playlists:
@@ -96,3 +98,10 @@ ja:
       title: 'プロフィール'
     update:
       success: 'ユーザー名を変更しました'
+  email_changes:
+    create:
+      success: '新しいメールアドレス宛にメールを送信しました'
+    update:
+      success: 'メールアドレスを変更しました'
+      fail: 'メールアドレス変更の有効期限が切れている、またはメールアドレスが既に存在しています'
+
