@@ -15,13 +15,15 @@ Rails.application.routes.draw do
   resource :user, only: %i[edit update]
   resource :profile, only: %i[show edit update]
   resources :password_resets, only: %i[new create edit update]
+  resources :terms_of_services, only: %i[index]
+  resources :privacy_policies, only: %i[index]
+
   resources :songs, only: %i[index new create] do
     resources :scores
   end
   resources :email_changes, only: [:new, :create] do
     get 'update', to: 'email_changes#update', on: :member
   end
-
   resources :playlists do
     resources :songs, only: %i[edit update destroy show]
   end
