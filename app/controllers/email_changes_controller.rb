@@ -22,6 +22,5 @@ class EmailChangesController < ApplicationController
     else
       redirect_to root_path, danger: (t '.fail')
     end
-    binding.b
   end
 end
