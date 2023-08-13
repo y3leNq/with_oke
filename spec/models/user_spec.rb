@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe "ユーザーの新規登録" do
     context "正常に作成されること" do
-      it "全ての項目を入力" do
+      it "必要な項目を全て入力" do
         user = build(:user)
         expect(user).to be_valid
         expect(user.errors).to be_empty
@@ -24,10 +24,9 @@ RSpec.describe User, type: :model do
       end
 
       it "存在しているメールアドレスを入力" do
-        create(:user, email: "withoke@example.com")
-        user_with_exisit_email = build(:user, email: "withoke@example.com")
-        expect(user_with_exisit_email).to be_invalid
-        expect(user_with_exisit_email.errors[:email]).to eq ["はすでに存在します"]
+        user_with_exist_email = build(:user, email: create(:user).email)
+        expect(user_with_exist_email).to be_invalid
+        expect(user_with_exist_email.errors[:email]).to eq ["はすでに存在します"]
       end
 
       it "パスワードが未入力" do
