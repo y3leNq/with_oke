@@ -16,6 +16,12 @@ RSpec.describe Playlist, type: :model do
         expect(playlist_without_name).to be_invalid
         expect(playlist_without_name.errors[:name]).to eq ["を入力してください"]
       end
+
+      it "ユーザーが存在しない" do
+        playlist_without_user = build(:playlist, user: nil)
+        expect(playlist_without_user).to be_invalid
+        expect(playlist_without_user.errors[:user]).to eq ["を入力してください"]
+      end
     end
   end
 end
