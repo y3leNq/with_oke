@@ -1,38 +1,19 @@
-<%= turbo_frame_tag 'form' do %>
-  <%= form_with model: @user, url: signup_path, class: "col-10 offset-1" do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <div class="text-center">
-      <%= link_to auth_at_provider_path(provider: :google), class: "btn btn-danger rounded text-white mt-3", data: { turbo_frame: "_top" } do %>
-        <i class="fa-brands fa-google-plus-g me-2"></i>Sign up with Google
-      <% end %>
-    </div>
-    <div class="line-separator mt-4">
-      <div class="separator-text fs-5">or</div>
-    </div>
-    <div class="col-10 offset-1">
-      <div class="input-wrapper my-4">
-        <i class="fas fa-user input-icon"></i>
-        <%= f.label :name, class: 'form-label text-border fs-5' %>
-        <%= f.text_field :name, class: 'form-control rounded-pill form-control-with-icon' %>
-      </div>
-      <div class="input-wrapper mb-4">
-        <i class="fa-solid fa-envelope input-icon"></i>
-        <%= f.label :email, class: 'form-label text-border fs-5' %>
-        <%= f.email_field :email, class: 'form-control rounded-pill form-control-with-icon' %>
-      </div>
-      <div class="input-wrapper mb-4">
-        <i class="fa-solid fa-unlock-keyhole input-icon"></i>
-        <%= f.label :password, class: 'form-label text-border fs-5' %>
-        <%= f.password_field :password, class: 'form-control rounded-pill form-control-with-icon' %>
-      </div>
-      <div class="input-wrapper mb-4">
-        <i class="fa-solid fa-unlock-keyhole input-icon"></i>
-        <%= f.label :password_confirmation, class: 'form-label text-border fs-5' %>
-        <%= f.password_field :password_confirmation, class: 'form-control rounded-pill form-control-with-icon' %>
-      </div>
-      <div class="text-center mb-4 pt-2">
-        <%= f.submit 'Sign up', class: 'btn btn-primary', data: { turbo_frame: "_top"} %>
+<div class="container pb-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card login-card mt-5">
+        <div class="card-header p-0 mb-3" style="background: transparent;">
+          <ul class="nav nav-pills nav-fill mb-0">
+            <li class="nav-item">
+              <%= link_to "Sign in", login_path, class: "nav-link rounded-0 text-white border-end login-tab text-border", data: { turbo_frame: 'form' } %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign up", signup_path, class: "nav-link rounded-0 text-white login-tab text-border", data: { turbo_frame: 'form' } %>
+            </li>
+          </ul>
+        </div>
+        <%= render "signup_form" %>
       </div>
     </div>
-  <% end %>
-<% end %>
+  </div>
+</div>
