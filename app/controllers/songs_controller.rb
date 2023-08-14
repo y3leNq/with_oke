@@ -14,18 +14,21 @@ class SongsController < ApplicationController
       @song.artist = track_info[0]['artistName']
       @song.preview_url = track_info[0]['previewUrl']
     elsif params[:song_id].present?
-      @song.title = Song.find(params[:song_id]).title
-      @song.artist = Song.find(params[:song_id]).artist
+      song = Song.find(params[:song_id])
+      @song.id = song.id
+      @song.title = song.title
+      @song.artist = song.artist
+      @song.preview_url = song.preview_url
     end
   end
 
   def create
-    playlist = Playlist.find(params[:song][:playlist_id])
+    @playlist = Playlist.find(params[:song][:playlist_id])
     @song = Song.find_or_initialize_by(song_params.except(:key, :playlist_id))
     if @song.persisted? || @song.save
-      playlist_song = @song.playlist_songs.build(playlist_id: playlist.id, key: params[:song][:key])
+      playlist_song = @song.playlist_songs.build(playlist_id: @playlist.id, key: params[:song][:key])
       if playlist_song.save
-        flash.now[:info] = (t '.success', item: playlist.name)
+        flash.now[:info] = (t '.success', item: @playlist.name)
       else
         flash.now[:danger] = (t '.fail')
       end
