@@ -11,7 +11,7 @@
               <%= f.text_field :title, placeholder: (t "defaults.placeholder_title"), label_class: "text-border fs-5" %>
             </div>
             <div class="mt-4 col-md-4">
-              <%= f.select :key, options_for_select((-6..6).map { |n| [n == 0? "原キー" : (n > 0 ? "+#{n}" : n), n] }, selected: @song.set_key(@playlist) ), { label_class: "text-border fs-5" } %>
+              <%= f.select :key, options_for_select((-6..6).map { |n| [n == 0? (t "defaults.original_key") : (n > 0 ? "+#{n}" : n), n] }, selected: @song.set_key(@playlist) ), { label_class: "text-border fs-5" } %>
             </div>
             <div class="text-center mt-4 mb-2">
               <%= f.submit "OK", class: "btn btn-primary actions" %>

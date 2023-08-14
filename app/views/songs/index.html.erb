@@ -4,7 +4,7 @@
       <h1 class="text-border text-center"><%= (t 'defaults.search') %></h1>
       <%= render "search_form" %>
       <% if @songs.present? %>
-        <p class="mt-4 fs-5 potta-one ms-2 mb-1">人気曲</p>
+        <p class="mt-4 fs-5 potta-one ms-2 mb-1"><%= (t '.popular') %></p>
         <%= render partial: "top_song", collection: @songs %>
       <% end %>
     </div>
