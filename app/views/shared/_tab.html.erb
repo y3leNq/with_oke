@@ -1,0 +1,8 @@
+<ul class="nav nav-pills nav-fill mb-0">
+  <li class="nav-item">
+    <%= link_to "Sign in", login_path, class: "nav-link rounded-0 text-white border-end login-tab text-border #{"active" if request.path.start_with?(login_path)}" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Sign up", signup_path, class: "nav-link rounded-0 text-white login-tab text-border #{"active" if request.path.start_with?(signup_path)}" %>
+  </li>
+</ul>
