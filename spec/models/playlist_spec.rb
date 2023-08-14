@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Playlist, type: :model do
   describe "プレイリストの新規登録" do
     context "正常に作成されること" do
-      it "必要な項目をすべて入力" do
+      it "必要な項目を全て入力" do
         playlist = build(:playlist)
         expect(playlist).to be_valid
         expect(playlist.errors).to be_empty
