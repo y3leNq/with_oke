@@ -20,7 +20,7 @@ ja:
     original_key: '原曲キー'
     terms_of_service: '利用規約'
     privacy_policy: 'プライバシーポリシー'
-    contact: 'お問い合せ'
+    contact: 'お問い合わせ'
     placeholder: '曲名またはアーティスト名で検索'
     logout_message: 'ログアウトしますか？'
     delete_message: 'デリートしますか？'
@@ -78,6 +78,8 @@ ja:
     update:
       success: 'プレイリストを更新しました。'
   songs:
+    index:
+      popular: '人気曲'
     create:
       success: '%{item}に追加しました。'
       fail: 'この楽曲は既にプレイリストに追加されています'
