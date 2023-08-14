@@ -13,11 +13,9 @@
     </div>
     <div class="ms-auto align-self-center d-flex">
       <% if top_song.preview_url.present? %>
-        <i class="fa-solid fa-circle-play play-icon fs-5 mt-2 pt-1 me-3" style="color: #ffba24;" data-action="click->preview#play" data-preview-target="icon"></i>
+        <i class="fa-solid fa-circle-play play-icon fs-5 me-3" style="color: #ffba24;" data-action="click->preview#play" data-preview-target="icon"></i>
       <% end %>
-      <%= link_to new_song_path(song_id: top_song), class: "fs-3 me-1 add-btn", data: { turbo_frame: "modal" } do %>
-        <i class="fa-solid fa-circle-plus"></i>
-      <% end %>
+
     </div>
   </li>
 </ol>
