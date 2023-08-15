@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    if @user.update(user_params.except(:email, :password, :password_confirmation))
+    if @user.update(username_params)
       redirect_to root_path, info: (t '.success')
     else
       render :edit, status: :unprocessable_entity
@@ -34,5 +34,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def username_params
+    params.require(:user).permit(:name)
   end
 end
