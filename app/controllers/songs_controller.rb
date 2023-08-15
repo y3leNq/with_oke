@@ -24,9 +24,9 @@ class SongsController < ApplicationController
 
   def create
     @playlist = Playlist.find(params[:song][:playlist_id])
-    @song = Song.find_or_initialize_by(song_params.except(:key, :playlist_id))
+    @song = Song.find_or_initialize_by(song_params)
     if @song.persisted? || @song.save
-      playlist_song = @song.playlist_songs.build(playlist_id: @playlist.id, key: params[:song][:key])
+      playlist_song = @song.playlist_songs.build(playlist: @playlist, key: params[:song][:key])
       if playlist_song.save
         flash.now[:info] = (t '.success', item: @playlist.name)
       else
@@ -42,7 +42,7 @@ class SongsController < ApplicationController
   def edit; end
 
   def update
-    if @song.update(song_params.except(:playlist_id, :key)) && @song.playlist_songs.update(key: params[:song][:key])
+    if @song.update(song_params) && @song.playlist_songs.update(key: params[:song][:key])
       flash.now[:info] = (t '.success')
     else
       render :edit, status: :unprocessable_entity
@@ -66,7 +66,7 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:artist, :title, :key, :playlist_id, :preview_url)
+    params.require(:song).permit(:artist, :title, :preview_url)
   end
 
   def set_song
