@@ -19,25 +19,27 @@ class Song < ApplicationRecord
   validates :artist, :title, presence: true
   validates :artist, uniqueness: { scope: :title }
 
-  def self.search(query)
-    ITunesSearchAPI.search(term: query, media: 'music', country: 'jp')
-  end
+  class << self
+    def search(query)
+      ITunesSearchAPI.search(term: query, media: 'music', country: 'jp')
+    end
 
-  def self.lookup(query)
-    ITunesSearchAPI.lookup(id: query, country: 'jp')
-  end
+    def lookup(query)
+      ITunesSearchAPI.lookup(id: query, country: 'jp')
+    end
 
-  def self.ransackable_attributes(_auth_object = nil)
-    %w[artist created_at id itunes_id title updated_at]
-  end
+    def ransackable_attributes(_auth_object = nil)
+      %w[artist created_at id itunes_id title updated_at]
+    end
 
-  def self.ransackable_associations(_auth_object = nil)
-    %w[playlist_songs playlists scores]
-  end
+    def ransackable_associations(_auth_object = nil)
+      %w[playlist_songs playlists scores]
+    end
 
-  def self.top_songs
-    top_songs = PlaylistSong.group(:song_id).order('count_song_id DESC').limit(10).count(:song_id)
-    top_songs.keys.map { |key| Song.find(key) }
+    def top_songs
+      top_songs = PlaylistSong.group(:song_id).order('count_song_id DESC').limit(10).count(:song_id)
+      top_songs.keys.map { |key| Song.find(key) }
+    end
   end
 
   def set_key(playlist)
