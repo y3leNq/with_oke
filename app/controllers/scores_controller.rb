@@ -3,16 +3,14 @@ class ScoresController < ApplicationController
 
   def new
     @score = Score.new
-    hash = @song.scores.group_by { |score| score.key.to_s }.to_h
-    @chart = hash.transform_values { |scores| scores.max_by(&:score).score }.sort_by { |key, _| key.to_f }
+    @chart = @song.score_chart
   end
 
   def create
     @score = @song.scores.build(score_params)
 
     if @score.save
-      hash = @song.scores.group_by { |score| score.key.to_s }.to_h
-      @chart = hash.transform_values { |scores| scores.max_by(&:score).score }.sort_by { |key, _| key.to_f }
+      @chart = @song.score_chart
       flash.now[:info] = (t '.success')
     else
       render :new, status: :unprocessable_entity

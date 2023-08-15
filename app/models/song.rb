@@ -43,4 +43,9 @@ class Song < ApplicationRecord
   def set_key(playlist)
     self.playlist_songs.where(playlist_id: playlist).first.key
   end
+
+  def score_chart
+    hash = self.scores.group_by { |score| score.key.to_s }.to_h
+    hash.transform_values { |scores| scores.max_by(&:score).score }.sort_by { |key, _| key.to_f }
+  end
 end
