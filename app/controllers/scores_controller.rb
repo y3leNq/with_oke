@@ -3,14 +3,14 @@ class ScoresController < ApplicationController
 
   def new
     @score = Score.new
-    @chart = @song.score_chart
+    @chart = current_user.score_chart(@song)
   end
 
   def create
     @score = @song.scores.build(score_params)
 
     if @score.save
-      @chart = @song.score_chart
+      @chart = current_user.score_chart(@song)
       flash.now[:info] = (t '.success')
     else
       render :new, status: :unprocessable_entity

@@ -57,4 +57,9 @@ class User < ApplicationRecord
     self.email_token_expires_at = nil
     save
   end
+
+  def score_chart(song)
+    hash = self.scores.where(song: song).group_by { |score| score.key.to_s }.to_h
+    hash.transform_values { |scores| scores.max_by(&:score).score }.sort_by { |key, _| key.to_f }
+  end
 end
