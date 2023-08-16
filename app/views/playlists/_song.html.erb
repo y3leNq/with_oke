@@ -18,13 +18,15 @@
               <div class="col-4 p-0">
                 <p><%= (t "defaults.key") %>: <%= song.set_key(playlist) %></p>
               </div>
-              <div class="col-8 p-0">
-                <% if current_user.is_score?(song) %>
-                  <p><%= Score.model_name.human %>: <%= current_user.max_score(song) %></p>
-                <% else %>
-                  <p><%= Score.model_name.human %>: -</p>
-                <% end %>
-              </div>
+              <%= turbo_frame_tag "score-#{song.id}" do %>
+                <div class="col-8 p-0">
+                  <% if current_user.is_score?(song) %>
+                    <p><%= Score.model_name.human %>: <%= current_user.max_score(song) %></p>
+                  <% else %>
+                    <p><%= Score.model_name.human %>: -</p>
+                  <% end %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>

@@ -1,5 +1,4 @@
-<%= turbo_stream.update "chart" do %>
-  <%= line_chart @chart, xtitle: Score.human_attribute_name(:key), ytitle: Score.human_attribute_name(:score), height: "200px" %>
+<%= turbo_stream.update "score-#{@song.id}" do %>
+  <p><%= Score.model_name.human %>: <%= current_user.max_score(@song) %></p>
 <% end %>
-
 <%= turbo_stream_flash %>
