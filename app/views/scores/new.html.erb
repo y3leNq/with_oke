@@ -1,15 +1,13 @@
 <%= render "shared/modal" do %>
   <div class="container">
     <div class="row">
-      <%= turbo_frame_tag "chart" do %>
-          <%= line_chart @chart, xtitle: Score.human_attribute_name(:key), ytitle: Score.human_attribute_name(:score), height: "200px" %>
-      <% end %>
+      <%= line_chart @chart, xtitle: Score.human_attribute_name(:key), ytitle: Score.human_attribute_name(:score), height: "200px", min: 60 %>
       <div class="col-md-10 offset-md-1">
         <div class="text-center potta-one">
           <p class="fs-2 mb-0"><%= @song.title %></p>
           <p class="mb-0"><%= @song.artist %></p>
         </div>
-        <%= form_with model: [@song, @score] do |f| %>
+        <%= form_with model: [@song, @score], data: { action: "turbo:submit-end->modal#close" } do |f| %>
           <%= render 'shared/error_messages', object: f.object %> 
           <div class="col-4 mb-3">
             <%= f.label :score, class: 'form-label text-border fs-5' %>
